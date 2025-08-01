@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人生选择</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div id="start-screen">
+        <h1>Life Pages</h1>
+        <p>You are about to embark on a youth journey from the age of 12 to 18.<br>Every choice you make will shape your future.</p>
+        <button id="start-button">Start game</button>
+    </div>
+
+    <div class="game-container hidden">
+        <div class="stats-container">
+            <div id="health-stat" class="stat">Health: 100</div>
+            <div id="academics-stat" class="stat">Academic: 60</div>
+            <div id="mood-stat" class="stat">Mood: 70</div>
+            <div id="money-stat" class="stat">Money: 50</div>
+            <div id="social-stat" class="stat">Social: 60</div>
+        </div>
+        <div id="age-display" class="age-display">Old: 12</div>
+
+        <div id="card" class="card">
+            <img id="card-image" src="" alt="卡片图片" style="display: none;">
+            <p id="card-text">这是卡片文本。</p>
+            <div class="option-left-label"></div>
+            <div class="option-right-label"></div>
+            <div class="option-up-label"></div>
+                    <div class="option-center-label"></div> <div class="option-down-label"></div>
+                </div>
+            <div class="option-down-label"></div>
+        </div>
+
+        <div id="bottom-hand-stack" class="bottom-hand-stack"></div>
+
+        <div id="engrave-screen" class="hidden">
+            <h3>这一年有哪些记忆最令你难忘？</h3>
+            <div id="engrave-options" class="engrave-grid"></div>
+            <button id="engrave-confirm">铭刻这段记忆</button>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <div id="game-over-content">
+                <div id="game-over-message">
+                </div>
+
+                <div id="card-review-container">
+                    <div id="engraved-memories-display" class="memory-display-area"></div>
+                    <div id="related-memories-display" class="memory-display-area"></div>
+                </div>
+                
+                <button id="restart-button">重新开始</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
