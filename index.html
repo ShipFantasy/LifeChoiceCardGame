@@ -3,61 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人生选择</title>
+    <title>LifePages</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
     <div id="start-screen">
         <h1>Life Pages</h1>
-        <p>You are about to embark on a youth journey from the age of 12 to 18.<br>Every choice you make will shape your future.</p>
+        <p>You are about to embark on a youth journey from the age of 12 to 15.<br>Every choice you make will shape your future.</p>
         <button id="start-button">Start game</button>
+        <button id="volume-button">Settings</button>
     </div>
+
+    <div id="volume-settings-screen" class="overlay-screen hidden">
+        <h2>Volumn</h2>
+        <div class="volume-control">
+            <label for="bgm-volume">BACKGROUND</label>
+            <input type="range" id="bgm-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <div class="volume-control">
+            <label for="sfx-volume">SFX</label>
+            <input type="range" id="sfx-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <button id="back-to-start">RETURN</button>
+    </div>
+
 
     <div class="game-container hidden">
         <div class="stats-container">
-            <div id="health-stat" class="stat">Health: 100</div>
-            <div id="academics-stat" class="stat">Academic: 60</div>
-            <div id="mood-stat" class="stat">Mood: 70</div>
-            <div id="money-stat" class="stat">Money: 50</div>
-            <div id="social-stat" class="stat">Social: 60</div>
+            <div class="stat" id="health-stat"><i class="fas fa-heart"></i> <span>100</span></div>
+            <div class="stat" id="academics-stat"><i class="fas fa-book"></i> <span>60</span></div>
+            <div class="stat" id="mood-stat"><i class="fas fa-smile"></i> <span>70</span></div>
+            <div class="stat" id="money-stat"><i class="fas fa-coins"></i> <span>50</span></div>
+            <div class="stat" id="social-stat"><i class="fas fa-users"></i> <span>60</span></div>
         </div>
-        <div id="age-display" class="age-display">Old: 12</div>
+
+
+
+        <div id="stats-hover-container">
+        <div id="toggle-hidden-stats-btn" class="clickable-label">Look within...</div>
+        <div id="hidden-stats-panel" class="stats-panel">
+            <div id="hidden-stats-age" style="margin-bottom: 8px;">Age: --</div>
+            <ul id="hidden-stats-list"></ul>
+        </div>
+        </div>
 
         <div id="card" class="card">
-            <img id="card-image" src="" alt="卡片图片" style="display: none;">
-            <p id="card-text">这是卡片文本。</p>
-            <div class="option-left-label"></div>
-            <div class="option-right-label"></div>
-            <div class="option-up-label"></div>
-                    <div class="option-center-label"></div> <div class="option-down-label"></div>
-                </div>
-            <div class="option-down-label"></div>
+        <img id="card-image" src="" alt="卡片图片" style="display: none;">
+        <p id="card-text">这是卡片文本。</p>
+        
+        <div class="option-label option-left-label"></div>
+        <div class="option-label option-right-label"></div>
+        <div class="option-label option-up-label"></div>
+        <div class="option-label option-down-label"></div>
+        <div class="option-label option-center-label"></div>
         </div>
+
 
         <div id="bottom-hand-stack" class="bottom-hand-stack"></div>
 
-        <div id="engrave-screen" class="hidden">
-            <h3>这一年有哪些记忆最令你难忘？</h3>
-            <div id="engrave-options" class="engrave-grid"></div>
-            <button id="engrave-confirm">铭刻这段记忆</button>
+        <button id="quit-button" class="corner-exit-button">Quit</button>
+
+
+        <div id="birthday-popup" style="display: none;">
+        <h2>Welcome to the next year,</h2>
+        <p>choose something to remember</p>
+        <div id="card-review-container"></div>
         </div>
 
-        <div id="game-over-screen" class="hidden">
-            <div id="game-over-content">
-                <div id="game-over-message">
-                </div>
 
-                <div id="card-review-container">
-                    <div id="engraved-memories-display" class="memory-display-area"></div>
-                    <div id="related-memories-display" class="memory-display-area"></div>
-                </div>
-                
-                <button id="restart-button">重新开始</button>
-            </div>
-        </div>
     </div>
 
+    <div id="game-over-screen" class="hidden">
+        <div class="ending-title-section">
+            <h2 id="ending-title"></h2>
+            <p id="ending-description"></p>
+        </div>
+
+        <div class="engraved-summary">
+            <h3>Do you remember?</h3>
+            <div id="engraved-cards" class="engraved-card-list"></div>
+        </div>
+
+        <div class="played-summary">
+            <h3>and all this...</h3>
+            <div id="played-cards-scroll" class="played-card-scroll"></div>
+        </div>
+
+        <button id="restart-button">🔁 Restart</button>
+    </div>
+
+    
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

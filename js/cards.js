@@ -4,1140 +4,1287 @@
 export const allCards_12 = {
     // --- 双选项卡牌 ---
     "card_locked_door": {
-        text: "你第一次反锁房门，妈妈在门外敲了很久。",
-        tags: ['family', 'boundary'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "打开门说“我想有点空间”",
-        effectLeft: {
-            stats: { mood: +5, freedom: +10 },
-            hiddenStats: { courage: +2, selfIdentity: +1 },
-            memory: { keyword: "边界", image: "assets/images/card_locked_door.png" }
-        },
-        optionRightText: "假装没听见继续沉默",
-        effectRight: {
-            stats: { mood: -10, security: -5 },
-            hiddenStats: { avoidance: +3 },
-            memory: { keyword: "疏离", image: "assets/images/card_locked_door.png" }
+      text: "The first time you locked the door, your mother knocked on it for a long time.",
+      tags: ["family", "boundary"],
+      cardImage: "assets/images/card_locked_door.jpg",
+
+      optionLeftText: "Open the door and say 'I need some space'",
+      effectLeft: {
+        stats: { mood: +5, freedom: +10 },
+        hiddenStats: { courage: +2, selfIdentity: +1 },
+        memory: {
+          keyword: "边界",
+          image: "assets/images/card_locked_door.jpg"
         }
+      },
+
+      optionRightText: "Pretend not to hear and keep silent",
+      effectRight: {
+        stats: { mood: -10, security: -5 },
+        hiddenStats: { compliance: +2, emotionalIntimacy: -5 },
+        memory: {
+          keyword: "疏离",
+          image: "assets/images/card_locked_door.jpg"
+        }
+      }
     },
     "card_dad_drunk": {
-        text: "爸爸喝醉后对你发了火，你装作睡着没回应。",
-        tags: ['family', 'fear'],
-        cardImage: "assets/images/card_dad_drunk.png",
-        optionLeftText: "第二天试探地问“你昨天还好吗？”",
-        effectLeft: {
-            stats: { courage: +5, security: +5 },
-            hiddenStats: { empathy: +2 },
-            memory: { keyword: "试探", image: "assets/images/card_dad_drunk.png" }
-        },
-        optionRightText: "继续不提这件事",
-        effectRight: {
-            stats: { mood: -10, security: -10 },
-            hiddenStats: { repression: +3 },
-            memory: { keyword: "压抑", image: "assets/images/card_dad_drunk.png" }
+      text: "Your dad got angry at you when he was drunk, but you pretended to be asleep and didn’t respond.",
+      tags: ["family", "fear"],
+      cardImage: "assets/images/card_dad_drunk.jpg",
+
+      optionLeftText: "The next day, you tentatively ask, “How were you yesterday?”",
+      effectLeft: {
+        stats: { courage: +5, security: +5 },
+        hiddenStats: { emotionalIntimacy: +3 },
+        memory: {
+          keyword: "Tentative Connection",
+          image: "assets/images/card_dad_drunk.jpg"
         }
+      },
+
+      optionRightText: "You keep silent and never mention it again.",
+      effectRight: {
+        stats: { mood: -10, security: -10 },
+        hiddenStats: { compliance: +2, emotionalIntimacy: -5 },
+        memory: {
+          keyword: "Repression",
+          image: "assets/images/card_dad_drunk.jpg"
+        }
+      }
     },
     "card_mom_cry": {
-        text: "你半夜起来喝水，偶然看见妈妈在客厅偷偷哭泣。",
-        tags: ['family', 'growth'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "悄悄走过去抱住她",
-        effectLeft: {
-            stats: { mood: +10 },
-            hiddenStats: { compassion: +3 },
-            memory: { keyword: "体谅", image: "assets/images/card_mom_cry.png" }
-        },
-        optionRightText: "假装没看见回房间",
-        effectRight: {
-            stats: { mood: -10 },
-            hiddenStats: { denial: +2 },
-            memory: { keyword: "逃避", image: "assets/images/card_mom_cry.png" }
+      text: "You get up in the middle of the night to get some water and accidentally see your mother crying alone in the living room.",
+      tags: ["family", "growth"],
+      cardImage: "assets/images/card_mom_cry.jpg",
+
+      optionLeftText: "Quietly walk over and hug her.",
+      effectLeft: {
+        stats: { mood: +10 },
+        hiddenStats: { emotionalIntimacy: +5 },
+        memory: {
+          keyword: "Compassion",
+          image: "assets/images/card_mom_cry.jpg"
         }
+      },
+
+      optionRightText: "Pretend not to notice and go back to your room.",
+      effectRight: {
+        stats: { mood: -10 },
+        hiddenStats: { avoidance: +3 },
+        memory: {
+          keyword: "Avoidance",
+          image: "assets/images/card_mom_cry.jpg"
+        }
+      }
     },
     "card_dance_dream": {
-        text: "你想学跳舞，但家人觉得这是“浪费时间”。",
-        tags: ['dream', 'family'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "和他们据理力争",
-        effectLeft: {
-            stats: { mood: -10 },
-            hiddenStats: { determination: +3 },
-            memory: { keyword: "坚持", image: "assets/images/card_dance_dream.png" }
-        },
-        optionRightText: "暂时把想法藏起来",
-        effectRight: {
-            stats: { mood: -5 },
-            hiddenStats: { suppression: +2 },
-            memory: { keyword: "隐藏", image: "assets/images/card_dance_dream.png" }
+      text: "You want to learn to dance, but your family thinks it's a waste of time.",
+      tags: ["dream", "family"],
+      cardImage: "assets/images/card_dance_dream.jpg",
+
+      optionLeftText: "Argue with them.",
+      effectLeft: {
+        stats: { mood: -10 },
+        hiddenStats: { courage: +3, selfIdentity: +2 },
+        memory: {
+          keyword: "Persistence",
+          image: "assets/images/card_dance_dream.jpg"
         }
+      },
+
+      optionRightText: "Keep your desire to yourself for now.",
+      effectRight: {
+        stats: { mood: -5 },
+        hiddenStats: { compliance: +2, emotionalIntimacy: -3 },
+        memory: {
+          keyword: "Suppression",
+          image: "assets/images/card_dance_dream.jpg"
+        }
+      }
     },
     "card_family_trip": {
-        text: "家庭旅行时，父母忽然吵了起来，你感到很尴尬和无助。",
-        tags: ['family', 'emotion'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "试着调解他们的情绪",
-        effectLeft: {
-            stats: { mood: +5, courage: +5 },
-            hiddenStats: { mediation: +3 },
-            memory: { keyword: "调和", image: "assets/images/card_family_trip.png" }
-        },
-        optionRightText: "躲开他们，自己去探索",
-        effectRight: {
-            stats: { freedom: +10, mood: -5 },
-            hiddenStats: { escapism: +3 },
-            memory: { keyword: "逃离", image: "assets/images/card_family_trip.png" }
+      text: "While on a family trip, your parents suddenly start arguing, and you feel embarrassed and helpless.",
+      tags: ["family", "emotion"],
+      cardImage: "assets/images/card_family_trip.jpg",
+
+      optionLeftText: "Try to calm them down.",
+      effectLeft: {
+        stats: { mood: +5, social: +5 },
+        hiddenStats: { emotionalIntimacy: +3 },
+        memory: {
+          keyword: "Mediation",
+          image: "assets/images/card_family_trip.jpg"
         }
-    },    
-    "card_white_lie_friend": {
-        text: "朋友帮你撒了个小谎，但你开始不安。",
-        tags: ['friendship', 'ethics'],
-        cardImage: "assets/images/card_locked_door.png",
-        canEcho: true,
-        flowerTag: "鸢尾花（信任裂痕）",
-        echoType: "情绪干扰",
-        optionLeftText: "坦白告诉老师事情真相",
-        effectLeft: {
-            stats: { courage: +10, social: -5 },
-            hiddenStats: { honesty: +3 },
-            memory: { keyword: "诚实", image: "assets/images/card_white_lie_friend.png" }
-        },
-        optionRightText: "接受这份‘保护’",
-        effectRight: {
-            stats: { mood: +5, self: -5 },
-            hiddenStats: { guilt: +2 },
-            memory: { keyword: "隐瞒", image: "assets/images/card_white_lie_friend.png" }
+      },
+
+      optionRightText: "Avoid them and explore on your own.",
+      effectRight: {
+        stats: { freedom: +10, mood: -5 },
+        hiddenStats: { avoidance: +3 },
+        memory: {
+          keyword: "Escape",
+          image: "assets/images/card_family_trip.jpg"
         }
+      }
     },
+    
+
     "card_stray_cat": {
-        text: "和她一起在巷子口捡到一只小猫。",
-        tags: ['friendship', 'care'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "勿忘我（珍惜）",
-        echoType: "剧情共鸣",
-        optionLeftText: "决定偷偷一起养",
-        effectLeft: {
-            stats: { social: +10, mood: +5 },
-            hiddenStats: { responsibility: +3 },
-            memory: { keyword: "共养", image: "assets/images/card_stray_cat.png" }
-        },
-        optionRightText: "放走它，说“太麻烦了”",
-        effectRight: {
-            stats: { mood: -5, social: -5 },
-            hiddenStats: { guilt: +2 },
-            memory: { keyword: "放弃", image: "assets/images/card_stray_cat.png" }
+      text: "You picked up a kitten together at the alley entrance.",
+      tags: ["friendship", "care"],
+      cardImage: "assets/images/card_stray_cat.jpg",
+
+      optionLeftText: "Decide to secretly raise it together.",
+      effectLeft: {
+        stats: { social: +10, mood: +5 },
+        hiddenStats: { responsibility: +3 },
+        memory: {
+          keyword: "Shared Bond",
+          image: "assets/images/card_stray_cat.jpg"
         }
+      },
+
+      optionRightText: "Let it go, saying it’s too much trouble.",
+      effectRight: {
+        stats: { mood: -5, social: -5 },
+        hiddenStats: { avoidance: +2 },
+        memory: {
+          keyword: "Letting Go",
+          image: "assets/images/card_stray_cat.jpg"
+        }
+      }
     },
     "card_bestie_argue": {
-        text: "和最好的朋友大吵一架，你俩谁也不理谁。你会怎么做？",
-        tags: ['social', 'friendship'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "薄荷（冷战）",
-        echoType: "对话改写",
-        optionLeftText: "主动递纸条道歉",
-        effectLeft: {
-            stats: { social: +15, mood: +10 },
-            hiddenStats: { humility: +2 },
-            memory: { keyword: "和解", image: "card_bestie_argue.png" }
-        },
-        optionRightText: "等她先来找我",
-        effectRight: {
-            stats: { social: -10, mood: -10 },
-            hiddenStats: { stubbornness: +3 },
-            memory: { keyword: "固执", image: "assets/images/card_bestie_argue.png" }
+      text: "You and your best friend are having a huge fight and neither of you is speaking to the other. What do you do?",
+      tags: ["social", "friendship"],
+      cardImage: "assets/images/card_bestie_argue.jpg",
+
+      optionLeftText: "Pass a note to apologize.",
+      effectLeft: {
+        stats: { social: +15, mood: +10 },
+        hiddenStats: { emotionalIntimacy: +3 },
+        memory: {
+          keyword: "Reconciliation",
+          image: "assets/images/card_bestie_argue.jpg"
         }
+      },
+
+      optionRightText: "Wait for her to come to you first.",
+      effectRight: {
+        stats: { social: -10, mood: -10 },
+        hiddenStats: { selfIdentity: +1, emotionalIntimacy: -3 },
+        memory: {
+          keyword: "Stubbornness",
+          image: "assets/images/card_bestie_argue.jpg"
+        }
+      }
     },
     "card_friend_move": {
-        text: "最好的朋友要搬家了，你感到难过和无助。",
-        tags: ['friendship', 'loss'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "风信子（离别）",
-        echoType: "情绪干扰",
-        optionLeftText: "约定保持联系",
-        effectLeft: {
-            stats: { social: +10, mood: +5 },
-            hiddenStats: { commitment: +3 },
-            memory: { keyword: "承诺", image: "assets/images/memory_friend_call.png" }
-        },
-        optionRightText: "选择慢慢放下",
-        effectRight: {
-            stats: { mood: -5, courage: +5 },
-            hiddenStats: { acceptance: +2 },
-            memory: { keyword: "放手", image: "assets/images/memory_let_go.png" }
+      text: "Your best friend is moving away, and you feel sad and helpless.",
+      tags: ["friendship", "loss"],
+      cardImage: "assets/images/card_friend_move.jpg",
+
+      optionLeftText: "Promise to keep in touch.",
+      effectLeft: {
+        stats: { social: +10, mood: +5 },
+        hiddenStats: { responsibility: +2, emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Promise",
+          image: "assets/images/card_friend_move.jpg"
         }
+      },
+
+      optionRightText: "Choose to slowly let go.",
+      effectRight: {
+        stats: { mood: -5, courage: +5 },
+        hiddenStats: { selfIdentity: +2 },
+        memory: {
+          keyword: "Letting Go",
+          image: "assets/images/card_friend_move.jpg"
+        }
+      }
     },
     "card_secret_crush": {
-        text: "你发现自己开始在意某个人，这成了日记里最大的秘密。",
-        tags: ['relationship', 'love'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "薰衣草（隐恋）",
-        echoType: "剧情共鸣",
-        optionLeftText: "把这份心情告诉朋友",
-        effectLeft: {
-            stats: { social: +10, mood: +5 },
-            hiddenStats: { openness: +2 },
-            memory: { keyword: "秘密", image: "assets/images/card_secret_crush.png" }
-        },
-        optionRightText: "只写在日记本的最后一页",
-        effectRight: {
-            stats: { mood: +10 },
-            hiddenStats: { introspection: +2 },
-            memory: { keyword: "独白", image: "assets/images/card_secret_crush.png" }
+      text: "You start to care about someone, and this becomes the biggest secret in your diary.",
+      tags: ["relationship", "love"],
+      cardImage: "assets/images/card_secret_crush.jpg",
+
+      optionLeftText: "Tell your friends about this feeling.",
+      effectLeft: {
+        stats: { social: +10, mood: +5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Secret Shared",
+          image: "assets/images/card_secret_crush.jpg"
         }
+      },
+
+      optionRightText: "Only write it in your diary.",
+      effectRight: {
+        stats: { mood: +10 },
+        hiddenStats: { selfIdentity: +2 },
+        memory: {
+          keyword: "Inner Monologue",
+          image: "assets/images/card_secret_crush.jpg"
+        }
+      }
     },
     "card_bully_group": {
-        text: "班级聊天群里，几个同学开始带头孤立一个女生。",
-        tags: ['moral', 'social'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "鬼针草（旁观者）",
-        echoType: "对话改写",
-        optionLeftText: "私下安慰那个女生",
-        effectLeft: {
-            stats: { social: +5, mood: +5 },
-            hiddenStats: { kindness: +3 },
-            memory: { keyword: "善意", image: "assets/images/card_bully_group.png" }
-        },
-        optionRightText: "保持沉默，假装没看到",
-        effectRight: {
-            stats: { social: -5, mood: -10 },
-            hiddenStats: { indifference: +3 },
-            memory: { keyword: "沉默", image: "assets/images/card_bully_group.png" }
+      text: "In the class group chat, some classmates start to isolate a girl.",
+      tags: ["moral", "social"],
+      cardImage: "assets/images/card_bully_group.jpg",
+
+      optionLeftText: "Privately comfort the girl.",
+      effectLeft: {
+        stats: { social: +5, mood: +5 },
+        hiddenStats: { emotionalIntimacy: +3 },
+        memory: {
+          keyword: "Kindness",
+          image: "assets/images/card_bully_group.jpg"
         }
+      },
+
+      optionRightText: "Stay silent and pretend not to see.",
+      effectRight: {
+        stats: { social: -5, mood: -10 },
+        hiddenStats: { compliance: +3 },
+        memory: {
+          keyword: "Silence",
+          image: "assets/images/card_bully_group.jpg"
+        }
+      }
     },
+
+
     "card_groupwork_alone": {
-        text: "小组作业没人动手，你默默一个人完成了。",
-        tags: ['school', 'pressure'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "写上所有人名字交上去",
-        effectLeft: {
-            stats: { social: +5, self: -5 },
-            hiddenStats: { altruism: +2 },
-            memory: { keyword: "成全", image: "assets/images/card_groupwork_alone.png" }
-        },
-        optionRightText: "只写你自己名字",
-        effectRight: {
-            stats: { courage: +10, social: -10 },
-            hiddenStats: { assertiveness: +3 },
-            memory: { keyword: "据理", image: "assets/images/card_groupwork_alone.png" }
+      text: "No one contributes to the group project, so you quietly finish it alone.",
+      tags: ["school", "pressure"],
+      cardImage: "assets/images/card_groupwork_alone.jpg",
+
+      optionLeftText: "Submit it with everyone’s name.",
+      effectLeft: {
+        stats: { social: +5, self: -5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Sacrifice",
+          image: "assets/images/card_groupwork_alone.jpg"
         }
+      },
+
+      optionRightText: "Only submit your own name.",
+      effectRight: {
+        stats: { courage: +10, social: -10 },
+        hiddenStats: { selfIdentity: +3 },
+        memory: {
+          keyword: "Assertiveness",
+          image: "assets/images/card_groupwork_alone.jpg"
+        }
+      }
     },
     "card_cheating_seen": {
-        text: "你亲眼看到朋友在考试中作弊。",
-        tags: ['ethics', 'school'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "装作没看到",
-        effectLeft: {
-            stats: { mood: -5, self: -5 },
-            hiddenStats: { avoidance: +2 },
-            memory: { keyword: "沉默", image: "assets/images/card_cheating_seen.png" }
-        },
-        optionRightText: "考后提醒她以后别这样",
-        effectRight: {
-            stats: { courage: +10, social: +5 },
-            hiddenStats: { integrity: +3 },
-            memory: { keyword: "提醒", image: "assets/images/card_cheating_seen.png" }
+      text: "You catch your friend cheating during a test.",
+      tags: ["ethics", "school"],
+      cardImage: "assets/images/card_cheating_seen.jpg",
+
+      optionLeftText: "Pretend not to see.",
+      effectLeft: {
+        stats: { mood: -5, self: -5 },
+        hiddenStats: { avoidance: +2 },
+        memory: {
+          keyword: "Silence",
+          image: "assets/images/card_cheating_seen.jpg"
         }
+      },
+
+      optionRightText: "Talk to her after the exam.",
+      effectRight: {
+        stats: { courage: +10, social: +5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Reminder",
+          image: "assets/images/card_cheating_seen.jpg"
+        }
+      }
     },
     "card_math_class": {
-        text: "数学课上，你发现自己比大多数男生成绩都好。",
-        tags: ['study', 'gender'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "享受这份领先的自信",
-        effectLeft: {
-            stats: { academics: +10, mood: +5 },
-            hiddenStats: { pride: +3 },
-            memory: { keyword: "光芒", image: "assets/images/card_math_class.png" }
-        },
-        optionRightText: "怕太张扬，故意做错几道",
-        effectRight: {
-            stats: { academics: -5, mood: -10 },
-            hiddenStats: { modesty: +2 },
-            memory: { keyword: "隐藏", image: "assets/images/card_math_class.png" }
+      text: "In math class, you realize you’re performing better than most boys.",
+      tags: ["study", "gender"],
+      cardImage: "assets/images/card_math_class.jpg",
+
+      optionLeftText: "Enjoy the feeling of leading.",
+      effectLeft: {
+        stats: { academics: +10, mood: +5 },
+        hiddenStats: { selfIdentity: +3 },
+        memory: {
+          keyword: "Pride",
+          image: "assets/images/card_math_class.jpg"
         }
+      },
+
+      optionRightText: "Downplay it by making a few mistakes on purpose.",
+      effectRight: {
+        stats: { academics: -5, mood: -10 },
+        hiddenStats: { compliance: +2 },
+        memory: {
+          keyword: "Concealment",
+          image: "assets/images/card_math_class.jpg"
+        }
+      }
     },
     "card_period_panic": {
-        text: "在上课时，你感觉自己好像是第一次来月经了。",
-        tags: ['body', 'shame'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "下课后告诉同桌闺蜜",
-        effectLeft: {
-            stats: { health: +5, social: +5 },
-            hiddenStats: { trust: +2 },
-            memory: { keyword: "分享", image: "assets/images/card_period_panic.png" }
-        },
-        optionRightText: "一个人去厕所偷偷确认",
-        effectRight: {
-            stats: { health: -5, mood: -5 },
-            hiddenStats: { anxiety: +3 },
-            memory: { keyword: "慌张", image: "assets/images/card_period_panic.png" }
+      text: "In class, you sense you might be having your period for the first time.",
+      tags: ["body", "shame"],
+      cardImage: "assets/images/card_period_panic.jpg",
+
+      optionLeftText: "Tell your best friend after class.",
+      effectLeft: {
+        stats: { health: +5, social: +5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Sharing",
+          image: "assets/images/card_period_panic.jpg"
         }
+      },
+
+      optionRightText: "Go check quietly in the restroom.",
+      effectRight: {
+        stats: { health: -5, mood: -5 },
+        hiddenStats: { anxiety: +3 },
+        memory: {
+          keyword: "Panic",
+          image: "assets/images/card_period_panic.jpg"
+        }
+      }
     },
     "card_school_performance": {
-        text: "考试成绩公布，你的排名比预期高，但也感到压力山大。",
-        tags: ['study', 'pressure'],
-        cardImage: "assets/images/card_locked_door.png",
-        optionLeftText: "庆祝这份成就",
-        effectLeft: {
-            stats: { mood: +10, academics: +5 },
-            hiddenStats: { celebration: +3 },
-            memory: { keyword: "喜悦", image: "assets/images/card_school_performance.png" }
-        },
-        optionRightText: "给自己制定更高目标",
-        effectRight: {
-            stats: { courage: +10, mood: -5 },
-            hiddenStats: { ambition: +3 },
-            memory: { keyword: "挑战", image: "assets/images/card_school_performance.png" }
+      text: "Your test results exceed expectations, but you feel pressure.",
+      tags: ["study", "pressure"],
+      cardImage: "assets/images/card_school_performance.jpg",
+
+      optionLeftText: "Celebrate the achievement.",
+      effectLeft: {
+        stats: { mood: +10, academics: +5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: {
+          keyword: "Joy",
+          image: "assets/images/card_school_performance.jpg"
         }
+      },
+
+      optionRightText: "Set even higher goals.",
+      effectRight: {
+        stats: { courage: +10, mood: -5 },
+        hiddenStats: { selfIdentity: +3 },
+        memory: {
+          keyword: "Challenge",
+          image: "assets/images/card_school_performance.jpg"
+        }
+      }
     },
+
+
     "card_mirror_self": {
-        text: "看着镜子里变化的自己，你想穿那件喜欢的、但又有点“显眼”的裙子出门吗？",
-        tags: ['self', 'explore'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "雏菊（自我觉醒）",
-        echoType: "情绪干扰",
-        optionLeftText: "穿！我喜欢就好",
-        effectLeft: {
-            stats: { mood: +15, social: -5 },
-            hiddenStats: { confidence: +4 },
-            memory: { keyword: "独特", image: "assets/images/card_mirror_self.png" }
-        },
-        optionRightText: "还是穿校服吧",
-        effectRight: {
-            stats: { mood: -5 },
-            hiddenStats: { conformity: +3 },
-            memory: { keyword: "融入", image: "assets/images/card_mirror_self.png" }
+      text: "Looking at yourself in the mirror, do you want to wear that favorite but somewhat conspicuous skirt?",
+      tags: ["self", "explore"],
+      cardImage: "assets/images/card_mirror_self.jpg",
+
+      optionLeftText: "Wear it! I like it.",
+      effectLeft: {
+        stats: { mood: +15, social: -5 },
+        hiddenStats: { selfIdentity: +4 },
+        memory: {
+          keyword: "Uniqueness",
+          image: "assets/images/card_mirror_self.jpg"
         }
+      },
+
+      optionRightText: "Wear the school uniform.",
+      effectRight: {
+        stats: { mood: -5 },
+        hiddenStats: { compliance: +3 },
+        memory: {
+          keyword: "Blending In",
+          image: "assets/images/card_mirror_self.jpg"
+        }
+      }
     },
     "card_fat_shame": {
-        text: "午餐时，有人开玩笑说你“吃得真多，怪不得有点胖”。你沉默了一整个下午。",
-        tags: ['self', 'shame'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "月见草（羞耻）",
-        echoType: "对话变更",
-        optionLeftText: "默默地承受...",
-        effectLeft: {
-            stats: { mood: -15, health: -5 },
-            hiddenStats: { hurt: +3 },
-            memory: { keyword: "羞耻", image: "assets/images/card_fat_shame.png" }
-        },
-        optionRightText: "当场反击，维护自己",
-        effectRight: {
-            stats: { mood: +5, social: -5 },
-            hiddenStats: { assertiveness: +3 },
-            memory: { keyword: "反击", image: "assets/images/card_fat_shame.png" }
+      text: "At lunch, someone joked about how much you ate. You stayed silent the whole afternoon.",
+      tags: ["self", "shame"],
+      cardImage: "assets/images/card_fat_shame.jpg",
+
+      optionLeftText: "Bear it silently.",
+      effectLeft: {
+        stats: { mood: -15, health: -5 },
+        hiddenStats: { emotionalIntimacy: -5 },
+        memory: {
+          keyword: "Shame",
+          image: "assets/images/card_fat_shame.jpg"
         }
+      },
+
+      optionRightText: "Fight back and defend yourself.",
+      effectRight: {
+        stats: { mood: +5, social: -5 },
+        hiddenStats: { selfIdentity: +3 },
+        memory: {
+          keyword: "Rebuttal",
+          image: "assets/images/card_fat_shame.jpg"
+        }
+      }
     },
     "card_sensible_praise": {
-        text: "亲戚来家里做客，夸你“真是个懂事的孩子”。你挤出微笑，但不确定这是不是一句赞美。",
-        tags: ['self', 'struggle'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "薄荷（隐痛顺从）",
-        echoType: "剧情共鸣",
-        optionLeftText: "礼貌地回应...",
-        effectLeft: {
-            stats: { mood: -5 },
-            hiddenStats: { compliance: +2 },
-            memory: { keyword: "懂事", image: "assets/images/card_sensible_praise.png" }
-        },
-        optionRightText: "心里感到委屈，但没说出来",
-        effectRight: {
-            stats: { mood: -10 },
-            hiddenStats: { resentment: +3 },
-            memory: { keyword: "委屈", image: "assets/images/card_sensible_praise.png" }
-        }
+      text: "A relative visits and praises you as a 'very sensible child.' You force a smile, unsure if it’s truly a compliment.",
+      tags: ["self", "struggle"],
+      cardImage: "assets/images/card_sensible_praise.jpg",
+      canEcho: true,
+      flowerTag: "Mint (Hidden Obedience)",
+      echoType: "Narrative Resonance",
+
+      optionLeftText: "Respond politely...",
+      effectLeft: {
+        stats: { mood: -5 },
+        hiddenStats: { compliance: +2 },
+        memory: { keyword: "Obedience", image: "assets/images/card_sensible_praise.jpg" }
+      },
+
+      optionRightText: "You feel wronged, but stay quiet.",
+      effectRight: {
+        stats: { mood: -10 },
+        hiddenStats: { emotionalIntimacy: -3 },
+        memory: { keyword: "Unspoken Grievance", image: "assets/images/card_sensible_praise.jpg" }
+      }
     },
     "card_rooftop_escape": {
-        text: "你一个人在教学楼的楼顶看天发呆，幻想自己能消失一会儿，哪怕只有几分钟。",
-        tags: ['escapism', 'emotion'],
-        canEcho: true,
-        cardImage: "assets/images/card_locked_door.png",
-        flowerTag: "金鱼草（逃避）",
-        echoType: "情绪干扰",
-        optionLeftText: "就这样，静静地...",
-        effectLeft: {
-            stats: { mood: +10, health: -5 },
-            hiddenStats: { calmness: +3 },
-            memory: { keyword: "放空", image: "assets/images/card_rooftop_escape.png" }
-        },
-        optionRightText: "深呼吸，决定回去面对",
-        effectRight: {
-            stats: { mood: -5, courage: +10 },
-            hiddenStats: { resolve: +3 },
-            memory: { keyword: "勇敢", image: "assets/images/card_rooftop_escape.png" }
-        }
+      text: "You're alone on the school rooftop, gazing at the sky, fantasizing about disappearing for a while.",
+      tags: ["escapism", "emotion"],
+      cardImage: "assets/images/card_rooftop_escape.jpg",
+      canEcho: true,
+      flowerTag: "Snapdragon (Escape)",
+      echoType: "Emotional Disruption",
+
+      optionLeftText: "Just like that, quietly...",
+      effectLeft: {
+        stats: { mood: +10, health: -5 },
+        hiddenStats: { freedom: +3 },
+        memory: { keyword: "Stillness", image: "assets/images/card_rooftop_escape.jpg" }
+      },
+
+      optionRightText: "Take a deep breath and face it.",
+      effectRight: {
+        stats: { mood: -5, courage: +10 },
+        hiddenStats: { selfIdentity: +2, courage: +1 },
+        memory: { keyword: "Bravery", image: "assets/images/card_rooftop_escape.jpg" }
+      }
     },
     "card_idol_light": {
-        text: "在屏幕上看到偶像的演唱会，万千灯光汇成一片海。你感觉心里某个东西，被点亮了。",
-        tags: ['dream', 'spark'],
-        cardImage: "assets/images/card_locked_door.png",
-        canEcho: true,
-        flowerTag: "向日葵（启发）",
-        echoType: "剧情共鸣",
-        optionLeftText: "被深深地打动...",
-        effectLeft: {
-            stats: { mood: +20 },
-            hiddenStats: { inspiration: +5 },
-            memory: { keyword: "闪光", image: "assets/images/card_idol_light.png" }
-        },
-        optionRightText: "觉得遥不可及，默默欣赏",
-        effectRight: {
-            stats: { mood: +5 },
-            hiddenStats: { admiration: +2 },
-            memory: { keyword: "仰望", image: "assets/images/card_idol_light.png" }
-        }
+      text: "Watching your idol’s concert online, you see a sea of lights, and something in you lights up.",
+      tags: ["dream", "spark"],
+      cardImage: "assets/images/card_idol_light.jpg",
+      canEcho: true,
+      flowerTag: "Sunflower (Inspiration)",
+      echoType: "Narrative Resonance",
+
+      optionLeftText: "Deeply moved...",
+      effectLeft: {
+        stats: { mood: +20 },
+        hiddenStats: { selfIdentity: +3, freedom: +2 },
+        memory: { keyword: "Spark", image: "assets/images/card_idol_light.jpg" }
+      },
+
+      optionRightText: "Feel it's out of reach, admire silently.",
+      effectRight: {
+        stats: { mood: +5 },
+        hiddenStats: { emotionalIntimacy: +2 },
+        memory: { keyword: "Distant Admiration", image: "assets/images/card_idol_light.jpg" }
+      }
     },
-    "card_first_earnings": {
-        text: "你用零花钱买了自己喜欢的小物品，感受到掌控的快乐。",
-        tags: ['self', 'independence'],
-        cardImage: "assets/images/card_locked_door.png",
-        canEcho: true,
-        flowerTag: "金盏花（掌控）",
-        echoType: "剧情共鸣",
-        optionLeftText: "计划下一次购物",
-        effectLeft: {
-            stats: { freedom: +10, mood: +5 },
-            hiddenStats: { planning: +3 },
-            memory: { keyword: "掌控", image: "assets/images/card_first_earnings.png" }
-        },
-        optionRightText: "存钱攒起来做更大投资",
-        effectRight: {
-            stats: { patience: +10, freedom: +5 },
-            hiddenStats: { saving: +3 },
-            memory: { keyword: "积蓄", image: "assets/images/card_first_earnings.png" }
-        }
-    },
-    "card_first_job": {
-        text: "你尝试做第一份兼职，体验劳动的艰辛与乐趣。",
-        tags: ['growth', 'responsibility'],
-        cardImage: "assets/images/card_locked_door.png",
-        canEcho: true,
-        flowerTag: "风铃草（成长）",
-        echoType: "剧情共鸣",
-        optionLeftText: "认真完成任务",
-        effectLeft: {
-            stats: { courage: +10, freedom: +5 },
-            hiddenStats: { diligence: +3 },
-            memory: { keyword: "努力", image: "assets/images/card_first_job.png" }
-        },
-        optionRightText: "觉得压力大，想放弃",
-        effectRight: {
-            stats: { mood: -10, courage: -5 },
-            hiddenStats: { stress: +3 },
-            memory: { keyword: "退缩", image: "assets/images/card_first_job.png" }
-        }
-    },
-    "card_new_hobby": {
-        text: "你发现了一个新的兴趣爱好，想试试看。",
-        tags: ['explore', 'joy'],
-        cardImage: "assets/images/card_locked_door.png",
-        canEcho: true,
-        flowerTag: "勿忘我（热情）",
-        echoType: "情绪干扰",
-        optionLeftText: "投入时间学习",
-        effectLeft: {
-            stats: { mood: +15, courage: +5 },
-            hiddenStats: { enthusiasm: +4 },
-            memory: { keyword: "热情", image: "assets/images/card_new_hobby.png" }
-        },
-        optionRightText: "犹豫不决，暂时放弃",
-        effectRight: {
-            stats: { mood: -5 },
-            hiddenStats: { indecision: +3 },
-            memory: { keyword: "犹豫", image: "assets/images/card_new_hobby.png" }
-        }
-    }
+
+
 };
 
 // js/cards_13.js
 // 13岁卡池示范
 
 export const allCards_13 = {
-  "card_new_school": {
-    text: "转学第一天，你在新学校感到格格不入，没人主动跟你说话。",
-    tags: ['school', 'social'],
-    optionLeftText: "主动跟同学打招呼，试着融入",
-    effectLeft: {
-      stats: { social: +10, courage: +5 },
-      hiddenStats: { anxiety: +2 },
-      memory: { keyword: "融入", image: "assets/images/memory_new_school.png" }
-    },
-    optionRightText: "选择观察，慢慢适应",
-    effectRight: {
-      stats: { mood: -5, social: -5 },
-      hiddenStats: { caution: +3 },
-      memory: { keyword: "观察", image: "assets/images/memory_watch.png" }
-    }
-  },
-  "card_first_crush": {
-    text: "你发现自己对一个同学有了特别的感觉，心跳加速。",
-    tags: ['love', 'growth'],
-    optionLeftText: "偷偷写情书给他/她",
-    effectLeft: {
-      stats: { mood: +10, courage: +5 },
-      hiddenStats: { vulnerability: +3 },
-      memory: { keyword: "暗恋", image: "assets/images/memory_crush_letter.png" }
-    },
-    optionRightText: "把这份心情藏起来，继续朋友关系",
-    effectRight: {
-      stats: { mood: -5 },
-      hiddenStats: { repression: +2 },
-      memory: { keyword: "秘密", image: "assets/images/memory_crush_secret.png" }
-    }
-  },
-  "card_exam_pressure": {
-    text: "期中考试快到了，你感到极大压力，晚上经常失眠。",
-    tags: ['study', 'stress'],
-    optionLeftText: "制定详细复习计划，按部就班",
-    effectLeft: {
-      stats: { academics: +15, mood: -5 },
-      hiddenStats: { discipline: +4 },
-      memory: { keyword: "计划", image: "assets/images/memory_study_plan.png" }
-    },
-    optionRightText: "逃避复习，分心做别的事情",
-    effectRight: {
-      stats: { academics: -10, mood: +5 },
-      hiddenStats: { procrastination: +3 },
-      memory: { keyword: "逃避", image: "assets/images/memory_procrastinate.png" }
-    }
-  },
-  "card_family_conflict": {
-    text: "父母因为你的成绩争吵，你感到委屈和无助。",
-    tags: ['family', 'emotion'],
-    optionLeftText: "尝试沟通，表达自己的感受",
-    effectLeft: {
-      stats: { mood: +5, courage: +5 },
-      hiddenStats: { openness: +3 },
-      memory: { keyword: "沟通", image: "assets/images/memory_family_talk.png" }
-    },
-    optionRightText: "选择沉默，回避争吵",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { withdrawal: +3 },
-      memory: { keyword: "沉默", image: "assets/images/memory_silent.png" }
-    }
-  },
-  "card_friend_betrayal": {
-    text: "你发现最好的朋友背后说了你的坏话。",
-    tags: ['friendship', 'betrayal'],
-    optionLeftText: "当面质问朋友，寻求解释",
-    effectLeft: {
-      stats: { courage: +10, social: -5 },
-      hiddenStats: { confrontation: +3 },
-      memory: { keyword: "质问", image: "assets/images/memory_confront.png" }
-    },
-    optionRightText: "选择疏远朋友，冷处理",
-    effectRight: {
-      stats: { mood: -10, social: -10 },
-      hiddenStats: { resentment: +4 },
-      memory: { keyword: "疏远", image: "assets/images/memory_distance.png" }
-    }
-  },
-  "card_new_hobby": {
-    text: "你发现了新的兴趣爱好，想全身心投入。",
-    tags: ['explore', 'joy'],
-    optionLeftText: "坚持练习，逐渐提高",
-    effectLeft: {
-      stats: { mood: +15, courage: +5 },
-      hiddenStats: { dedication: +4 },
-      memory: { keyword: "热情", image: "assets/images/memory_new_hobby.png" }
-    },
-    optionRightText: "兴趣减弱，逐渐放弃",
-    effectRight: {
-      stats: { mood: -5 },
-      hiddenStats: { indecision: +3 },
-      memory: { keyword: "放弃", image: "assets/images/memory_giveup.png" }
-    }
-  },
-  "card_body_image": {
-    text: "你对自己身体的变化感到困惑，镜子里的自己似乎陌生。",
-    tags: ['self', 'body'],
-    optionLeftText: "接受变化，试着喜欢自己",
-    effectLeft: {
-      stats: { mood: +10, confidence: +5 },
-      hiddenStats: { selfAcceptance: +3 },
-      memory: { keyword: "接受", image: "assets/images/memory_body_accept.png" }
-    },
-    optionRightText: "批评自己，感觉不够好",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { selfCriticism: +4 },
-      memory: { keyword: "批评", image: "assets/images/memory_body_criticize.png" }
-    }
-  },
-  "card_social_media": {
-    text: "你看到朋友圈里别人光鲜的生活，心里产生嫉妒。",
-    tags: ['social', 'emotion'],
-    optionLeftText: "主动减少社交媒体使用",
-    effectLeft: {
-      stats: { mood: +5, freedom: +5 },
-      hiddenStats: { mindfulness: +3 },
-      memory: { keyword: "减少", image: "assets/images/memory_social_off.png" }
-    },
-    optionRightText: "继续刷屏，想融入",
-    effectRight: {
-      stats: { mood: -5, social: +5 },
-      hiddenStats: { envy: +3 },
-      memory: { keyword: "嫉妒", image: "assets/images/memory_social_envy.png" }
-    }
-  },
-  "card_peer_pressure": {
-    text: "朋友们开始尝试抽烟喝酒，你是否跟随？",
-    tags: ['peer', 'pressure'],
-    optionLeftText: "拒绝，坚定自我",
-    effectLeft: {
-      stats: { courage: +15, health: +10 },
-      hiddenStats: { integrity: +4 },
-      memory: { keyword: "拒绝", image: "assets/images/memory_refuse.png" }
-    },
-    optionRightText: "尝试，想融入群体",
-    effectRight: {
-      stats: { mood: +5, social: +10 },
-      hiddenStats: { risk: +4 },
-      memory: { keyword: "尝试", image: "assets/images/memory_try.png" }
-    }
-  },
-  "card_part_time_job": {
-    text: "你找到一份兼职工作，既兴奋又有些害怕。",
-    tags: ['growth', 'responsibility'],
-    optionLeftText: "认真负责，努力适应",
-    effectLeft: {
-      stats: { courage: +10, freedom: +5 },
-      hiddenStats: { diligence: +3 },
-      memory: { keyword: "努力", image: "assets/images/memory_part_time.png" }
-    },
-    optionRightText: "觉得压力大，想放弃",
-    effectRight: {
-      stats: { mood: -10, courage: -5 },
-      hiddenStats: { stress: +3 },
-      memory: { keyword: "退缩", image: "assets/images/memory_quit.png" }
-    }
-  },
-  "card_mental_health": {
-    text: "你开始感到焦虑，夜晚难以入眠。",
-    tags: ['mental', 'health'],
-    optionLeftText: "尝试写日记排解",
-    effectLeft: {
-      stats: { mood: +5 },
-      hiddenStats: { introspection: +3 },
-      memory: { keyword: "日记", image: "assets/images/memory_journal.png" }
-    },
-    optionRightText: "选择忽略，继续挣扎",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { avoidance: +4 },
-      memory: { keyword: "忽略", image: "assets/images/memory_ignore.png" }
-    }
+
+"card_parents_plan_future": {
+  text: "Your parents have been planning your future without asking your opinion.",
+  tags: ["family", "control"],
+  cardImage: "assets/images/card_parents_plan_future.jpg",
+
+  optionLeftText: "Speak up and share what you truly want.",
+  effectLeft: {
+    stats: { courage: 10, mood: -5 },
+    hiddenStats: { selfIdentity: 5 },
+    memory: { keyword: "Expression", image: "assets/images/card_parents_plan_future.jpg" }
   },
 
-  "card_group_project": {
-    text: "小组项目合作中，有人不按时完成任务，你怎么办？",
-    tags: ['school', 'teamwork'],
-    optionLeftText: "主动帮忙完成任务",
-    effectLeft: {
-      stats: { social: +10, mood: -5 },
-      hiddenStats: { responsibility: +3 },
-      memory: { keyword: "担当", image: "assets/images/memory_group_help.png" }
-    },
-    optionRightText: "提出质疑，要求公平分工",
-    effectRight: {
-      stats: { courage: +10, social: -5 },
-      hiddenStats: { assertiveness: +4 },
-      memory: { keyword: "坚持", image: "assets/images/memory_group_assert.png" }
-    }
-  },
-  "card_cyberbullying": {
-    text: "你在网上遭遇匿名欺凌，心情低落。",
-    tags: ['social', 'cyberbullying'],
-    optionLeftText: "向老师和家长求助",
-    effectLeft: {
-      stats: { mood: +5, courage: +5 },
-      hiddenStats: { supportSeeking: +3 },
-      memory: { keyword: "求助", image: "assets/images/memory_cyberbully_help.png" }
-    },
-    optionRightText: "选择沉默，自己忍受",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { isolation: +4 },
-      memory: { keyword: "沉默", image: "assets/images/memory_cyberbully_silent.png" }
-    }
-  },
-  "card_body_change_conflict": {
-    text: "你因身体发育被同学取笑，感到尴尬。",
-    tags: ['body', 'bullying'],
-    optionLeftText: "勇敢反击，维护自己",
-    effectLeft: {
-      stats: { courage: +15, social: -5 },
-      hiddenStats: { resilience: +4 },
-      memory: { keyword: "反击", image: "assets/images/memory_body_defend.png" }
-    },
-    optionRightText: "躲避同学，避免冲突",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { avoidance: +3 },
-      memory: { keyword: "逃避", image: "assets/images/memory_body_hide.png" }
-    }
-  },
-  "card_first_conflict_with_teacher": {
-    text: "你因作业问题与老师发生争执。",
-    tags: ['school', 'authority'],
-    optionLeftText: "表达自己的观点，试图沟通",
-    effectLeft: {
-      stats: { courage: +10, academics: -5 },
-      hiddenStats: { communication: +3 },
-      memory: { keyword: "沟通", image: "assets/images/memory_teacher_talk.png" }
-    },
-    optionRightText: "默默接受，避免冲突",
-    effectRight: {
-      stats: { mood: -5 },
-      hiddenStats: { compliance: +3 },
-      memory: { keyword: "顺从", image: "assets/images/memory_teacher_accept.png" }
-    }
-  },
-  "card_sibling_rivalry": {
-    text: "你和兄弟姐妹因争抢家里电脑发生争吵。",
-    tags: ['family', 'conflict'],
-    optionLeftText: "主动让步，平息争端",
-    effectLeft: {
-      stats: { mood: +5, social: +5 },
-      hiddenStats: { empathy: +3 },
-      memory: { keyword: "让步", image: "assets/images/memory_sibling_givein.png" }
-    },
-    optionRightText: "坚持己见，争取使用权",
-    effectRight: {
-      stats: { courage: +10, mood: -5 },
-      hiddenStats: { stubbornness: +4 },
-      memory: { keyword: "坚持", image: "assets/images/memory_sibling_fight.png" }
-    }
-  },
-  "card_first_public_speech": {
-    text: "学校安排你做公开演讲，你感到紧张。",
-    tags: ['school', 'courage'],
-    optionLeftText: "认真准备，尽力发挥",
-    effectLeft: {
-      stats: { courage: +15, social: +5 },
-      hiddenStats: { preparation: +4 },
-      memory: { keyword: "准备", image: "assets/images/memory_speech_prepare.png" }
-    },
-    optionRightText: "临时放弃，避免尴尬",
-    effectRight: {
-      stats: { mood: -10, courage: -5 },
-      hiddenStats: { avoidance: +4 },
-      memory: { keyword: "放弃", image: "assets/images/memory_speech_skip.png" }
-    }
-  },
-  "card_first_kiss": {
-    text: "你和喜欢的人第一次牵手，心跳加速。",
-    tags: ['love', 'growth'],
-    optionLeftText: "大胆表达喜欢",
-    effectLeft: {
-      stats: { mood: +20, courage: +10 },
-      hiddenStats: { vulnerability: +5 },
-      memory: { keyword: "表达", image: "assets/images/memory_first_kiss.png" }
-    },
-    optionRightText: "害羞回避，保持距离",
-    effectRight: {
-      stats: { mood: -5 },
-      hiddenStats: { shyness: +3 },
-      memory: { keyword: "回避", image: "assets/images/memory_shy.png" }
-    }
-  },
-  "card_peer_argument": {
-    text: "你和朋友为一件小事争吵，气氛紧张。",
-    tags: ['friendship', 'conflict'],
-    optionLeftText: "主动和解，修复关系",
-    effectLeft: {
-      stats: { social: +15, mood: +10 },
-      hiddenStats: { forgiveness: +4 },
-      memory: { keyword: "和解", image: "assets/images/memory_makeup.png" }
-    },
-    optionRightText: "冷战，谁也不说话",
-    effectRight: {
-      stats: { social: -10, mood: -10 },
-      hiddenStats: { stubbornness: +4 },
-      memory: { keyword: "冷战", image: "assets/images/memory_cold_war.png" }
-    }
-  },
-  "card_new_responsibility": {
-    text: "家里让你帮忙照顾弟弟妹妹，你觉得累又开心。",
-    tags: ['family', 'responsibility'],
-    optionLeftText: "认真照顾，尽力做好",
-    effectLeft: {
-      stats: { mood: +10, responsibility: +10 },
-      hiddenStats: { diligence: +3 },
-      memory: { keyword: "责任", image: "assets/images/memory_care_siblings.png" }
-    },
-    optionRightText: "敷衍了事，想偷懒",
-    effectRight: {
-      stats: { mood: -5, responsibility: -5 },
-      hiddenStats: { laziness: +3 },
-      memory: { keyword: "偷懒", image: "assets/images/memory_lazy.png" }
-    }
-  },
-  "card_mental_breakdown": {
-    text: "你因为压力爆发，情绪失控哭泣。",
-    tags: ['mental', 'stress'],
-    optionLeftText: "寻求朋友倾诉",
-    effectLeft: {
-      stats: { mood: +10, social: +5 },
-      hiddenStats: { openness: +3 },
-      memory: { keyword: "倾诉", image: "assets/images/memory_cry_help.png" }
-    },
-    optionRightText: "独自承受，继续坚强",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { isolation: +4 },
-      memory: { keyword: "独自", image: "assets/images/memory_alone.png" }
-    }
-  },
-  "card_sports_team": {
-    text: "加入学校运动队，你感到兴奋也有压力。",
-    tags: ['growth', 'teamwork'],
-    optionLeftText: "努力训练，争取上场机会",
-    effectLeft: {
-      stats: { courage: +10, mood: +5, health: +10 },
-      hiddenStats: { perseverance: +4 },
-      memory: { keyword: "训练", image: "assets/images/memory_sports_train.png" }
-    },
-    optionRightText: "害怕失败，准备放弃",
-    effectRight: {
-      stats: { mood: -10 },
-      hiddenStats: { fear: +4 },
-      memory: { keyword: "放弃", image: "assets/images/memory_sports_quit.png" }
-    }
+  optionRightText: "Stay silent and follow their plan.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { compliance: 5 },
+    memory: { keyword: "Obedience", image: "assets/images/card_parents_plan_future.jpg" }
   }
+},
+"card_sibling_jealousy": {
+  text: "Your younger sibling gets more attention from your parents lately.",
+  tags: ["family", "emotion"],
+  cardImage: "assets/images/card_sibling_jealousy.jpg",
+
+  optionLeftText: "Talk to your parents about how you feel.",
+  effectLeft: {
+    stats: { mood: 5, courage: 5 },
+    hiddenStats: { openness: 3 },
+    memory: { keyword: "Honesty", image: "assets/images/card_sibling_jealousy.jpg" }
+  },
+
+  optionRightText: "Keep it to yourself and act cold.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { withdrawal: 4 },
+    memory: { keyword: "Jealousy", image: "assets/images/card_sibling_jealousy.jpg" }
+  }
+},
+"card_home_duties": {
+  text: "You're asked to take on more chores and help with your siblings.",
+  tags: ["family", "responsibility"],
+  cardImage: "assets/images/card_home_duties.jpg",
+
+  optionLeftText: "Take it seriously and try your best.",
+  effectLeft: {
+    stats: { responsibility: 10, mood: 5 },
+    hiddenStats: { diligence: 3 },
+    memory: { keyword: "Support", image: "assets/images/card_home_duties.jpg" }
+  },
+
+  optionRightText: "Complain and try to avoid doing it.",
+  effectRight: {
+    stats: { mood: -5, responsibility: -5 },
+    hiddenStats: { resistance: 3 },
+    memory: { keyword: "Avoidance", image: "assets/images/card_home_duties.jpg" }
+  }
+},
+"card_family_secret": {
+  text: "You overhear a serious family conversation not meant for you.",
+  tags: ["family", "emotion"],
+  cardImage: "assets/images/card_family_secret.jpg",
+
+  optionLeftText: "Ask your parents directly about it.",
+  effectLeft: {
+    stats: { courage: 10 },
+    hiddenStats: { curiosity: 3 },
+    memory: { keyword: "Truth", image: "assets/images/card_family_secret.jpg" }
+  },
+
+  optionRightText: "Pretend you didn't hear anything.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { anxiety: 3 },
+    memory: { keyword: "Silence", image: "assets/images/card_family_secret.jpg" }
+  }
+},
+"card_midnight_argument": {
+  text: "You get into a heated argument with your parents late at night.",
+  tags: ["family", "conflict"],
+  cardImage: "assets/images/card_midnight_argument.jpg",
+
+  optionLeftText: "Apologize and try to make peace.",
+  effectLeft: {
+    stats: { mood: 5 },
+    hiddenStats: { empathy: 4 },
+    memory: { keyword: "Reconciliation", image: "assets/images/card_midnight_argument.jpg" }
+  },
+
+  optionRightText: "Stay angry and refuse to talk.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { resentment: 4 },
+    memory: { keyword: "Grudge", image: "assets/images/card_midnight_argument.jpg" }
+  }
+},
+
+
+"card_friend_circle_shift": {
+  text: "Your old friends start spending less time with you, and you feel left out.",
+  tags: ["friendship", "loss"],
+  cardImage: "assets/images/card_friend_circle_shift.jpg",
+
+  optionLeftText: "Talk to them and ask what's going on.",
+  effectLeft: {
+    stats: { courage: 10, social: -5 },
+    hiddenStats: { openness: 3 },
+    memory: { keyword: "Inquiry", image: "assets/images/card_friend_circle_shift.jpg" }
+  },
+
+  optionRightText: "Stay silent and slowly drift away.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { loneliness: 4 },
+    memory: { keyword: "Drift", image: "assets/images/card_friend_circle_shift.jpg" }
+  }
+},
+"card_trust_test": {
+  text: "A friend shares a secret with you and asks you not to tell anyone.",
+  tags: ["friendship", "trust"],
+  cardImage: "assets/images/card_trust_test.jpg",
+
+  optionLeftText: "Respect their trust and keep it secret.",
+  effectLeft: {
+    stats: { social: 5 },
+    hiddenStats: { integrity: 3 },
+    memory: { keyword: "Loyalty", image: "assets/images/card_trust_test.jpg" }
+  },
+
+  optionRightText: "Accidentally reveal it to someone else.",
+  effectRight: {
+    stats: { social: -10 },
+    hiddenStats: { guilt: 3 },
+    memory: { keyword: "Betrayal", image: "assets/images/card_trust_test.jpg" }
+  }
+},
+"card_social_label": {
+  text: "You hear classmates calling you 'too weird' or 'too quiet'.",
+  tags: ["friendship", "identity"],
+  cardImage: "assets/images/card_social_label.jpg",
+
+  optionLeftText: "Confront them and defend yourself.",
+  effectLeft: {
+    stats: { courage: 10, mood: -5 },
+    hiddenStats: { selfIdentity: 3 },
+    memory: { keyword: "Assertion", image: "assets/images/card_social_label.jpg" }
+  },
+
+  optionRightText: "Say nothing and feel hurt inside.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { selfDoubt: 4 },
+    memory: { keyword: "Label", image: "assets/images/card_social_label.jpg" }
+  }
+},
+"card_group_bullying": {
+  text: "You witness your classmates excluding someone from the group.",
+  tags: ["friendship", "bullying"],
+  cardImage: "assets/images/card_group_bullying.jpg",
+
+  optionLeftText: "Speak up and support the excluded classmate.",
+  effectLeft: {
+    stats: { courage: 15, social: -5 },
+    hiddenStats: { empathy: 4 },
+    memory: { keyword: "Ally", image: "assets/images/card_group_bullying.jpg" }
+  },
+
+  optionRightText: "Stay quiet to avoid being targeted too.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { fear: 4 },
+    memory: { keyword: "Bystander", image: "assets/images/card_group_bullying.jpg" }
+  }
+},
+"card_crush_between_friends": {
+  text: "You realize you like someone who seems to like your best friend.",
+  tags: ["friendship", "emotion"],
+  cardImage: "assets/images/card_crush_between_friends.jpg",
+
+  optionLeftText: "Confess your feelings honestly.",
+  effectLeft: {
+    stats: { courage: 15, mood: +5 },
+    hiddenStats: { vulnerability: 4 },
+    memory: { keyword: "Confession", image: "assets/images/card_crush_between_friends.jpg" }
+  },
+
+  optionRightText: "Hide your feelings and pretend nothing happened.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { repression: 4 },
+    memory: { keyword: "Secret", image: "assets/images/card_crush_between_friends.jpg" }
+  }
+},
+
+
+"card_test_score_shame": {
+  text: "Your test score was lower than expected, and the teacher comments in front of the class.",
+  tags: ["school", "stress"],
+  cardImage: "assets/images/card_test_score_shame.jpg",
+
+  optionLeftText: "Talk to the teacher after class about how it made you feel.",
+  effectLeft: {
+    stats: { courage: 10 },
+    hiddenStats: { communication: 3 },
+    memory: { keyword: "SpeakUp", image: "assets/images/card_test_score_shame.jpg" }
+  },
+
+  optionRightText: "Stay quiet and let it bother you.",
+  effectRight: {
+    stats: { mood: -10, academics: -5 },
+    hiddenStats: { repression: 3 },
+    memory: { keyword: "Shame", image: "assets/images/card_test_score_shame.jpg" }
+  }
+},
+"card_fairness_conflict": {
+  text: "Your teacher gives you a worse grade than others for the same effort.",
+  tags: ["school", "authority"],
+  cardImage: "assets/images/card_fairness_conflict.jpg",
+
+  optionLeftText: "Ask for an explanation and challenge the decision.",
+  effectLeft: {
+    stats: { courage: 15 },
+    hiddenStats: { assertiveness: 4 },
+    memory: { keyword: "Challenge", image: "assets/images/card_fairness_conflict.jpg" }
+  },
+
+  optionRightText: "Accept it and keep quiet.",
+  effectRight: {
+    stats: { mood: -5, academics: -5 },
+    hiddenStats: { compliance: 3 },
+    memory: { keyword: "Resignation", image: "assets/images/card_fairness_conflict.jpg" }
+  }
+},
+"card_club_overload": {
+  text: "You've joined too many school clubs and feel completely drained.",
+  tags: ["school", "overload"],
+  cardImage: "assets/images/card_club_overload.jpg",
+
+  optionLeftText: "Quit one and protect your energy.",
+  effectLeft: {
+    stats: { mood: +5 },
+    hiddenStats: { selfCare: 3 },
+    memory: { keyword: "Balance", image: "assets/images/card_club_overload.jpg" }
+  },
+
+  optionRightText: "Push through and try to do everything.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { burnout: 3 },
+    memory: { keyword: "Overload", image: "assets/images/card_club_overload.jpg" }
+  }
+},
+"card_homework_collaboration": {
+  text: "Your friend asks to copy your homework before class.",
+  tags: ["school", "peer"],
+  cardImage: "assets/images/card_homework_collaboration.jpg",
+
+  optionLeftText: "Say no and explain your reason.",
+  effectLeft: {
+    stats: { courage: 10, academics: +5 },
+    hiddenStats: { integrity: 4 },
+    memory: { keyword: "Boundaries", image: "assets/images/card_homework_collaboration.jpg" }
+  },
+
+  optionRightText: "Let them copy, just this once.",
+  effectRight: {
+    stats: { social: +5 },
+    hiddenStats: { hesitation: 2 },
+    memory: { keyword: "Compromise", image: "assets/images/card_homework_collaboration.jpg" }
+  }
+},
+"card_internet_exposure": {
+  text: "You post something online that gets more attention than you expected.",
+  tags: ["social", "internet"],
+  cardImage: "assets/images/card_internet_exposure.jpg",
+
+  optionLeftText: "Enjoy the moment but stay cautious.",
+  effectLeft: {
+    stats: { mood: +5, social: +5 },
+    hiddenStats: { selfAwareness: 3 },
+    memory: { keyword: "Confidence", image: "assets/images/card_internet_exposure.jpg" }
+  },
+
+  optionRightText: "Get anxious and delete the post.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { anxiety: 3 },
+    memory: { keyword: "Regret", image: "assets/images/card_internet_exposure.jpg" }
+  }
+},
+
+"card_journal_reflection": {
+  text: "You start writing a private journal to sort through your thoughts.",
+  tags: ["self", "introspection"],
+  cardImage: "assets/images/card_journal_reflection.jpg",
+
+  optionLeftText: "Write regularly and reflect honestly.",
+  effectLeft: {
+    stats: { mood: +10 },
+    hiddenStats: { selfAwareness: 4 },
+    memory: { keyword: "Clarity", image: "assets/images/card_journal_reflection.jpg" }
+  },
+
+  optionRightText: "Feel embarrassed and give up writing.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { avoidance: 3 },
+    memory: { keyword: "Abandonment", image: "assets/images/card_journal_reflection.jpg" }
+  }
+},
+"card_emotional_outburst": {
+  text: "You suddenly get very upset over something small and don't know why.",
+  tags: ["self", "emotion"],
+  cardImage: "assets/images/card_emotional_outburst.jpg",
+
+  optionLeftText: "Apologize and try to understand your feelings.",
+  effectLeft: {
+    stats: { mood: +5 },
+    hiddenStats: { maturity: 3 },
+    memory: { keyword: "Growth", image: "assets/images/card_emotional_outburst.jpg" }
+  },
+
+  optionRightText: "Blame others and stay angry.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { reactivity: 4 },
+    memory: { keyword: "Explosion", image: "assets/images/card_emotional_outburst.jpg" }
+  }
+},
+"card_midnight_scrolling": {
+  text: "You stay up late on your phone, knowing you'll be tired tomorrow.",
+  tags: ["self", "habit"],
+  cardImage: "assets/images/card_midnight_scrolling.jpg",
+
+  optionLeftText: "Put the phone down and sleep early.",
+  effectLeft: {
+    stats: { health: +10, mood: +5 },
+    hiddenStats: { discipline: 4 },
+    memory: { keyword: "Control", image: "assets/images/card_midnight_scrolling.jpg" }
+  },
+
+  optionRightText: "Keep scrolling, ignoring the time.",
+  effectRight: {
+    stats: { mood: -5, health: -10 },
+    hiddenStats: { impulse: 4 },
+    memory: { keyword: "Fatigue", image: "assets/images/card_midnight_scrolling.jpg" }
+  }
+},
+"card_mirror_moment": {
+  text: "You stare at your reflection, wondering who you're becoming.",
+  tags: ["self", "identity"],
+  cardImage: "assets/images/card_mirror_moment.jpg",
+
+  optionLeftText: "Embrace the changes and be curious.",
+  effectLeft: {
+    stats: { mood: +10 },
+    hiddenStats: { selfAcceptance: 4 },
+    memory: { keyword: "Curiosity", image: "assets/images/card_mirror_moment.jpg" }
+  },
+
+  optionRightText: "Avoid looking and feel uneasy.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { insecurity: 4 },
+    memory: { keyword: "Doubt", image: "assets/images/card_mirror_moment.jpg" }
+  }
+},
+"card_boundary_setting": {
+  text: "A classmate keeps invading your space, but you're unsure how to respond.",
+  tags: ["self", "boundary"],
+  cardImage: "assets/images/card_boundary_setting.jpg",
+
+  optionLeftText: "Set a clear boundary and speak up.",
+  effectLeft: {
+    stats: { courage: +10, mood: +5 },
+    hiddenStats: { selfIdentity: 4 },
+    memory: { keyword: "Boundary", image: "assets/images/card_boundary_setting.jpg" }
+  },
+
+  optionRightText: "Stay quiet and hope they stop.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { compliance: 3 },
+    memory: { keyword: "Suppression", image: "assets/images/card_boundary_setting.jpg" }
+  }
+}
+
+
 };
 
-// js/cards_14_extra.js
-// 14岁卡池 - 12张示范卡牌
+
 
 export const allCards_14 = {
-  "card_first_job_offer": {
-    text: "你收到了一份暑期兼职的工作邀请，既兴奋又有点紧张。",
-    tags: ['growth', 'responsibility'],
-    optionLeftText: "接受挑战，努力工作",
-    effectLeft: {
-      stats: { courage: +15, responsibility: +10, mood: +5 },
-      memory: { keyword: "成长", image: "assets/images/memory_first_job.png" }
-    },
-    optionRightText: "担心自己不够好，拒绝机会",
-    effectRight: {
-      stats: { mood: -10, courage: -5 },
-      memory: { keyword: "犹豫", image: "assets/images/memory_job_decline.png" }
-    }
+
+"card_lock_door_argument": {
+  text: "You lock your bedroom door for privacy, and your parent gets upset.",
+  tags: ["family", "boundary"],
+  cardImage: "assets/images/card_lock_door_argument.jpg",
+
+  optionLeftText: "Explain your need for space calmly.",
+  effectLeft: {
+    stats: { mood: +5, courage: +5 },
+    hiddenStats: { selfIdentity: +3 },
+    memory: { keyword: "Boundaries", image: "assets/images/card_lock_door_argument.jpg" }
   },
-  "card_friend_betrayal": {
-    text: "你发现最好的朋友背后说了你的坏话，感到受伤。",
-    tags: ['friendship', 'trust'],
-    optionLeftText: "当面质问，寻求真相",
-    effectLeft: {
-      stats: { courage: +10, social: -5 },
-      memory: { keyword: "质问", image: "assets/images/memory_friend_confront.png" }
-    },
-    optionRightText: "选择疏远，慢慢冷静",
-    effectRight: {
-      stats: { mood: -10, social: -10 },
-      memory: { keyword: "疏远", image: "assets/images/memory_friend_distance.png" }
-    }
-  },
-  "card_exam_pressure": {
-    text: "临近大考，你感受到前所未有的压力。",
-    tags: ['study', 'stress'],
-    optionLeftText: "制定详细复习计划，努力坚持",
-    effectLeft: {
-      stats: { academics: +15, mood: -5 },
-      memory: { keyword: "坚持", image: "assets/images/memory_exam_study.png" }
-    },
-    optionRightText: "焦虑逃避，选择放松",
-    effectRight: {
-      stats: { mood: +5, academics: -10 },
-      memory: { keyword: "逃避", image: "assets/images/memory_exam_avoid.png" }
-    }
-  },
-  "card_romantic_interest": {
-    text: "你发现自己喜欢上了一个同学，心跳加速。",
-    tags: ['love', 'growth'],
-    optionLeftText: "主动表白，表达心意",
-    effectLeft: {
-      stats: { courage: +20, mood: +10 },
-      memory: { keyword: "勇敢", image: "assets/images/memory_confession.png" }
-    },
-    optionRightText: "害羞躲避，保持距离",
-    effectRight: {
-      stats: { mood: -5, courage: -5 },
-      memory: { keyword: "害羞", image: "assets/images/memory_shy.png" }
-    }
-  },
-  "card_family_conflict": {
-    text: "父母为你的未来规划发生激烈争吵，你夹在中间感到无助。",
-    tags: ['family', 'stress'],
-    optionLeftText: "尝试调解，表达自己的想法",
-    effectLeft: {
-      stats: { courage: +10, mood: -5 },
-      memory: { keyword: "沟通", image: "assets/images/memory_family_talk.png" }
-    },
-    optionRightText: "选择回避，独自冷静",
-    effectRight: {
-      stats: { mood: -10 },
-      memory: { keyword: "逃避", image: "assets/images/memory_family_escape.png" }
-    }
-  },
-  "card_peer_pressure": {
-    text: "朋友们劝你参加聚会，玩些你不太喜欢的游戏。",
-    tags: ['social', 'pressure'],
-    optionLeftText: "坚持自己的底线，拒绝参与",
-    effectLeft: {
-      stats: { courage: +15, social: -5 },
-      memory: { keyword: "坚持", image: "assets/images/memory_peer_resist.png" }
-    },
-    optionRightText: "妥协参与，融入集体",
-    effectRight: {
-      stats: { social: +10, mood: -5 },
-      memory: { keyword: "妥协", image: "assets/images/memory_peer_join.png" }
-    }
-  },
-  "card_self_image": {
-    text: "你对自己的外貌开始有更多关注，有些不自信。",
-    tags: ['self', 'body'],
-    optionLeftText: "努力接受自己，寻找优点",
-    effectLeft: {
-      stats: { mood: +10, self: +10 },
-      memory: { keyword: "接纳", image: "assets/images/memory_self_accept.png" }
-    },
-    optionRightText: "沉迷于外貌焦虑，情绪低落",
-    effectRight: {
-      stats: { mood: -15 },
-      memory: { keyword: "焦虑", image: "assets/images/memory_self_anxiety.png" }
-    }
-  },
-  "card_first_failure": {
-    text: "你第一次在重要事情上失败，感到沮丧。",
-    tags: ['growth', 'emotion'],
-    optionLeftText: "总结经验，重新出发",
-    effectLeft: {
-      stats: { courage: +10, mood: +5 },
-      memory: { keyword: "成长", image: "assets/images/memory_failure_growth.png" }
-    },
-    optionRightText: "陷入自责，难以自拔",
-    effectRight: {
-      stats: { mood: -15 },
-      memory: { keyword: "自责", image: "assets/images/memory_self_blame.png" }
-    }
-  },
-  "card_new_hobby": {
-    text: "你被一项新兴趣深深吸引，想要尝试。",
-    tags: ['explore', 'joy'],
-    optionLeftText: "投入时间学习，积极探索",
-    effectLeft: {
-      stats: { mood: +15, courage: +5 },
-      memory: { keyword: "热情", image: "assets/images/memory_new_hobby.png" }
-    },
-    optionRightText: "犹豫放弃，怕浪费时间",
-    effectRight: {
-      stats: { mood: -5 },
-      memory: { keyword: "犹豫", image: "assets/images/memory_hesitation.png" }
-    }
-  },
-  "card_social_media": {
-    text: "你在社交媒体上看到别人晒出光鲜生活，开始怀疑自己。",
-    tags: ['self', 'social'],
-    optionLeftText: "理性看待，保持自信",
-    effectLeft: {
-      stats: { mood: +10, self: +10 },
-      memory: { keyword: "理性", image: "assets/images/memory_social_media.png" }
-    },
-    optionRightText: "陷入比较，情绪低落",
-    effectRight: {
-      stats: { mood: -15 },
-      memory: { keyword: "比较", image: "assets/images/memory_social_comparison.png" }
-    }
-  },
-  "card_health_concern": {
-    text: "你感觉身体不适，但害怕告诉家长。",
-    tags: ['health', 'fear'],
-    optionLeftText: "勇敢告知家长并就医",
-    effectLeft: {
-      stats: { health: +10, courage: +5 },
-      memory: { keyword: "关怀", image: "assets/images/memory_health_care.png" }
-    },
-    optionRightText: "选择隐瞒，自己承受",
-    effectRight: {
-      stats: { health: -10, mood: -5 },
-      memory: { keyword: "隐瞒", image: "assets/images/memory_health_hide.png" }
-    }
-  },
-  "card_school_club": {
-    text: "学校招募新社团成员，你想参加但又担心时间不够。",
-    tags: ['growth', 'social'],
-    optionLeftText: "报名参加，挑战自我",
-    effectLeft: {
-      stats: { social: +10, courage: +10 },
-      memory: { keyword: "挑战", image: "assets/images/memory_club_join.png" }
-    },
-    optionRightText: "拒绝，选择专注学业",
-    effectRight: {
-      stats: { academics: +10, mood: -5 },
-      memory: { keyword: "专注", image: "assets/images/memory_study_focus.png" }
-    }
-  },
-  "card_conflict_with_teacher": {
-    text: "你和老师发生了激烈争论，觉得对方不理解你。",
-    tags: ['school', 'conflict'],
-    optionLeftText: "冷静表达自己的观点",
-    effectLeft: {
-      stats: { courage: +10, academics: -5 },
-      memory: { keyword: "沟通", image: "assets/images/memory_teacher_talk.png" }
-    },
-    optionRightText: "选择沉默，避免冲突",
-    effectRight: {
-      stats: { mood: -5 },
-      memory: { keyword: "回避", image: "assets/images/memory_silent.png" }
-    }
-  },
-  "card_sibling_rivalry": {
-    text: "你和兄弟姐妹因为小事争吵，气氛紧张。",
-    tags: ['family', 'emotion'],
-    optionLeftText: "主动道歉，缓和关系",
-    effectLeft: {
-      stats: { mood: +10, social: +5 },
-      memory: { keyword: "和解", image: "assets/images/memory_sibling_peace.png" }
-    },
-    optionRightText: "坚持己见，冷战一阵",
-    effectRight: {
-      stats: { mood: -10, social: -5 },
-      memory: { keyword: "固执", image: "assets/images/memory_sibling_cold.png" }
-    }
-  },
-  "card_online_argument": {
-    text: "在网络上和陌生人发生争论，感觉越来越激动。",
-    tags: ['social', 'stress'],
-    optionLeftText: "理智退场，避免无谓争吵",
-    effectLeft: {
-      stats: { mood: +5, courage: +5 },
-      memory: { keyword: "理智", image: "assets/images/memory_online_exit.png" }
-    },
-    optionRightText: "继续争辩，捍卫立场",
-    effectRight: {
-      stats: { mood: -10, courage: +10 },
-      memory: { keyword: "坚持", image: "assets/images/memory_online_fight.png" }
-    }
-  },
-  "card_art_competition": {
-    text: "你参加了学校的美术比赛，面临压力和期待。",
-    tags: ['creativity', 'pressure'],
-    optionLeftText: "全力以赴，享受创作过程",
-    effectLeft: {
-      stats: { mood: +15, courage: +5 },
-      memory: { keyword: "热情", image: "assets/images/memory_art_competition.png" }
-    },
-    optionRightText: "感到紧张，半途放弃",
-    effectRight: {
-      stats: { mood: -10, courage: -5 },
-      memory: { keyword: "放弃", image: "assets/images/memory_art_quit.png" }
-    }
-  },
-  "card_body_change": {
-    text: "身体开始明显变化，感到不适应和困惑。",
-    tags: ['body', 'growth'],
-    optionLeftText: "主动了解，接受变化",
-    effectLeft: {
-      stats: { mood: +10, self: +10 },
-      memory: { keyword: "接受", image: "assets/images/memory_body_accept.png" }
-    },
-    optionRightText: "抗拒，感到烦躁",
-    effectRight: {
-      stats: { mood: -10, self: -5 },
-      memory: { keyword: "抗拒", image: "assets/images/memory_body_reject.png" }
-    }
-  },
-  "card_cyberbullying": {
-    text: "你在网络上遭遇恶意留言，感到受伤害。",
-    tags: ['social', 'fear'],
-    optionLeftText: "告诉信任的大人寻求帮助",
-    effectLeft: {
-      stats: { courage: +10, mood: +5 },
-      memory: { keyword: "求助", image: "assets/images/memory_help.png" }
-    },
-    optionRightText: "选择沉默，忍受痛苦",
-    effectRight: {
-      stats: { mood: -15 },
-      memory: { keyword: "沉默", image: "assets/images/memory_silent.png" }
-    }
-  },
-  "card_first_travel_alone": {
-    text: "你第一次独自出门旅行，既期待又紧张。",
-    tags: ['growth', 'freedom'],
-    optionLeftText: "积极探索，享受独立",
-    effectLeft: {
-      stats: { freedom: +15, courage: +10, mood: +5 },
-      memory: { keyword: "独立", image: "assets/images/memory_travel_alone.png" }
-    },
-    optionRightText: "感到害怕，想早点结束旅行",
-    effectRight: {
-      stats: { mood: -10, courage: -5 },
-      memory: { keyword: "恐惧", image: "assets/images/memory_travel_fear.png" }
-    }
-  },
-  "card_volunteer_work": {
-    text: "学校组织义工活动，你在考虑是否参加。",
-    tags: ['social', 'growth'],
-    optionLeftText: "报名参加，帮助他人",
-    effectLeft: {
-      stats: { social: +10, mood: +10 },
-      memory: { keyword: "奉献", image: "assets/images/memory_volunteer.png" }
-    },
-    optionRightText: "觉得麻烦，选择放弃",
-    effectRight: {
-      stats: { mood: -5, social: -5 },
-      memory: { keyword: "逃避", image: "assets/images/memory_volunteer_skip.png" }
-    }
-  },
-  "card_peer_comparison": {
-    text: "看到同龄人取得成绩，你感到压力山大。",
-    tags: ['self', 'pressure'],
-    optionLeftText: "努力提升自己，不断进步",
-    effectLeft: {
-      stats: { courage: +10, academics: +10 },
-      memory: { keyword: "进步", image: "assets/images/memory_self_improve.png" }
-    },
-    optionRightText: "陷入自卑，丧失动力",
-    effectRight: {
-      stats: { mood: -15 },
-      memory: { keyword: "自卑", image: "assets/images/memory_self_doubt.png" }
-    }
-  },
-  "card_school_confession": {
-    text: "有同学向你表达喜欢，你感到惊讶和迷茫。",
-    tags: ['love', 'social'],
-    optionLeftText: "认真回应，尝试了解对方",
-    effectLeft: {
-      stats: { courage: +10, mood: +10 },
-      memory: { keyword: "回应", image: "assets/images/memory_confession_response.png" }
-    },
-    optionRightText: "婉拒，保持距离",
-    effectRight: {
-      stats: { mood: -5 },
-      memory: { keyword: "拒绝", image: "assets/images/memory_confession_reject.png" }
-    }
-  },
-  "card_time_management": {
-    text: "面对繁重的学习和兴趣安排，你感到时间不够用。",
-    tags: ['stress', 'growth'],
-    optionLeftText: "制定计划，有效分配时间",
-    effectLeft: {
-      stats: { academics: +10, mood: +5 },
-      memory: { keyword: "规划", image: "assets/images/memory_time_manage.png" }
-    },
-    optionRightText: "放任自己，随遇而安",
-    effectRight: {
-      stats: { mood: -10, academics: -5 },
-      memory: { keyword: "散漫", image: "assets/images/memory_time_mess.png" }
-    }
+
+  optionRightText: "Stay silent and avoid talking.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { withdrawal: +3 },
+    memory: { keyword: "Distance", image: "assets/images/card_lock_door_argument.jpg" }
   }
+},
+"card_family_expectation_clash": {
+  text: "Your parents want you to pursue something you’re not interested in.",
+  tags: ["family", "value"],
+  cardImage: "assets/images/card_family_expectation_clash.jpg",
+
+  optionLeftText: "Express your real interests.",
+  effectLeft: {
+    stats: { courage: +10 },
+    hiddenStats: { selfIdentity: +4 },
+    memory: { keyword: "Voice", image: "assets/images/card_family_expectation_clash.jpg" }
+  },
+
+  optionRightText: "Pretend to agree to avoid conflict.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { compliance: +4 },
+    memory: { keyword: "Pretending", image: "assets/images/card_family_expectation_clash.jpg" }
+  }
+},
+"card_emotional_burst": {
+  text: "One parent suddenly yells at you about something small.",
+  tags: ["family", "emotion"],
+  cardImage: "assets/images/card_emotional_burst.jpg",
+
+  optionLeftText: "Ask them calmly why they reacted that way.",
+  effectLeft: {
+    stats: { courage: +5 },
+    hiddenStats: { empathy: +3 },
+    memory: { keyword: "Understanding", image: "assets/images/card_emotional_burst.jpg" }
+  },
+
+  optionRightText: "Shout back and escalate the fight.",
+  effectRight: {
+    stats: { mood: -15 },
+    hiddenStats: { volatility: +3 },
+    memory: { keyword: "Explosion", image: "assets/images/card_emotional_burst.jpg" }
+  }
+},
+"card_family_secret_reveal": {
+  text: "You accidentally overhear something about a family issue you were never told.",
+  tags: ["family", "trust"],
+  cardImage: "assets/images/card_family_secret_reveal.jpg",
+
+  optionLeftText: "Ask about it directly.",
+  effectLeft: {
+    stats: { courage: +10 },
+    hiddenStats: { trust: +2 },
+    memory: { keyword: "Truth", image: "assets/images/card_family_secret_reveal.jpg" }
+  },
+
+  optionRightText: "Keep it to yourself, feeling uneasy.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { confusion: +3 },
+    memory: { keyword: "Doubt", image: "assets/images/card_family_secret_reveal.jpg" }
+  }
+},
+"card_weekend_rebellion": {
+  text: "You refuse to attend a family event to hang out with friends instead.",
+  tags: ["family", "conflict"],
+  cardImage: "assets/images/card_weekend_rebellion.jpg",
+
+  optionLeftText: "Negotiate honestly with your parent.",
+  effectLeft: {
+    stats: { freedom: +5, mood: +5 },
+    hiddenStats: { independence: +3 },
+    memory: { keyword: "Assertiveness", image: "assets/images/card_weekend_rebellion.jpg" }
+  },
+
+  optionRightText: "Go without permission and lie about it later.",
+  effectRight: {
+    stats: { freedom: +10, mood: -5 },
+    hiddenStats: { guilt: +4 },
+    memory: { keyword: "Deception", image: "assets/images/card_weekend_rebellion.jpg" }
+  }
+},
+
+"card_group_exclusion": {
+  text: "Your friend group goes out without telling you. You find out from photos later.",
+  tags: ["friendship", "exclusion"],
+  cardImage: "assets/images/card_group_exclusion.jpg",
+
+  optionLeftText: "Talk to them and ask why.",
+  effectLeft: {
+    stats: { courage: +10 },
+    hiddenStats: { communication: +3 },
+    memory: { keyword: "Confrontation", image: "assets/images/card_group_exclusion.jpg" }
+  },
+
+  optionRightText: "Say nothing and withdraw.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { selfDoubt: +4 },
+    memory: { keyword: "Isolation", image: "assets/images/card_group_exclusion.jpg" }
+  }
+},
+"card_loyalty_dilemma": {
+  text: "One friend tells you a secret that involves another friend.",
+  tags: ["friendship", "trust"],
+  cardImage: "assets/images/card_loyalty_dilemma.jpg",
+
+  optionLeftText: "Respect the secret and stay neutral.",
+  effectLeft: {
+    stats: { mood: -5 },
+    hiddenStats: { loyalty: +3 },
+    memory: { keyword: "Neutral", image: "assets/images/card_loyalty_dilemma.jpg" }
+  },
+
+  optionRightText: "Tell the other friend to warn them.",
+  effectRight: {
+    stats: { social: -5 },
+    hiddenStats: { betrayal: +3 },
+    memory: { keyword: "Break", image: "assets/images/card_loyalty_dilemma.jpg" }
+  }
+},
+"card_friends_vs_values": {
+  text: "Your friends pressure you to tease someone you don’t dislike.",
+  tags: ["friendship", "morality"],
+  cardImage: "assets/images/card_friends_vs_values.jpg",
+
+  optionLeftText: "Stand up and say it’s not okay.",
+  effectLeft: {
+    stats: { courage: +15, social: -5 },
+    hiddenStats: { integrity: +4 },
+    memory: { keyword: "Principle", image: "assets/images/card_friends_vs_values.jpg" }
+  },
+
+  optionRightText: "Laugh along to stay accepted.",
+  effectRight: {
+    stats: { mood: -5, social: +5 },
+    hiddenStats: { guilt: +4 },
+    memory: { keyword: "Compromise", image: "assets/images/card_friends_vs_values.jpg" }
+  }
+},
+"card_friend_confides": {
+  text: "A friend opens up about their struggles and swears you to secrecy.",
+  tags: ["friendship", "emotion"],
+  cardImage: "assets/images/card_friend_confides.jpg",
+
+  optionLeftText: "Keep the promise and offer support.",
+  effectLeft: {
+    stats: { mood: +5 },
+    hiddenStats: { empathy: +3 },
+    memory: { keyword: "Trust", image: "assets/images/card_friend_confides.jpg" }
+  },
+
+  optionRightText: "Tell someone else out of concern.",
+  effectRight: {
+    stats: { social: -5 },
+    hiddenStats: { supportSeeking: +2, betrayal: +2 },
+    memory: { keyword: "Concern", image: "assets/images/card_friend_confides.jpg" }
+  }
+},
+"card_friendship_shift": {
+  text: "Your best friend grows close to someone new, and you feel left out.",
+  tags: ["friendship", "change"],
+  cardImage: "assets/images/card_friendship_shift.jpg",
+
+  optionLeftText: "Talk about your feelings honestly.",
+  effectLeft: {
+    stats: { courage: +5 },
+    hiddenStats: { emotionalIntimacy: +3 },
+    memory: { keyword: "Vulnerability", image: "assets/images/card_friendship_shift.jpg" }
+  },
+
+  optionRightText: "Distance yourself to protect your pride.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { avoidance: +4 },
+    memory: { keyword: "Drift", image: "assets/images/card_friendship_shift.jpg" }
+  }
+},
+
+"card_teacher_unfairness": {
+  text: "You get blamed for something in class that wasn’t your fault.",
+  tags: ["school", "injustice"],
+  cardImage: "assets/images/card_teacher_unfairness.jpg",
+
+  optionLeftText: "Stand up and explain the truth.",
+  effectLeft: {
+    stats: { courage: +10 },
+    hiddenStats: { justice: +3 },
+    memory: { keyword: "Speak Up", image: "assets/images/card_teacher_unfairness.jpg" }
+  },
+
+  optionRightText: "Stay quiet and accept the blame.",
+  effectRight: {
+    stats: { mood: -10 },
+    hiddenStats: { repression: +3 },
+    memory: { keyword: "Unfair", image: "assets/images/card_teacher_unfairness.jpg" }
+  }
+},
+"card_club_leadership": {
+  text: "You're asked to be the leader of a group project or club.",
+  tags: ["school", "leadership"],
+  cardImage: "assets/images/card_club_leadership.jpg",
+
+  optionLeftText: "Take the role and do your best.",
+  effectLeft: {
+    stats: { social: +10, courage: +5 },
+    hiddenStats: { responsibility: +4 },
+    memory: { keyword: "Lead", image: "assets/images/card_club_leadership.jpg" }
+  },
+
+  optionRightText: "Decline because you're unsure.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { fear: +3 },
+    memory: { keyword: "Hesitation", image: "assets/images/card_club_leadership.jpg" }
+  }
+},
+"card_school_event_pressure": {
+  text: "You’re chosen to perform at a big school event.",
+  tags: ["school", "pressure"],
+  cardImage: "assets/images/card_school_event_pressure.jpg",
+
+  optionLeftText: "Push through and prepare hard.",
+  effectLeft: {
+    stats: { courage: +10, mood: +5 },
+    hiddenStats: { perseverance: +3 },
+    memory: { keyword: "Stage", image: "assets/images/card_school_event_pressure.jpg" }
+  },
+
+  optionRightText: "Fake illness to avoid the spotlight.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { avoidance: +3 },
+    memory: { keyword: "Escape", image: "assets/images/card_school_event_pressure.jpg" }
+  }
+},
+"card_real_world_visit": {
+  text: "Your class visits a local shelter or courthouse. It impacts you deeply.",
+  tags: ["society", "reflection"],
+  cardImage: "assets/images/card_real_world_visit.jpg",
+
+  optionLeftText: "Share your feelings and ask questions.",
+  effectLeft: {
+    stats: { self: +5 },
+    hiddenStats: { empathy: +4 },
+    memory: { keyword: "Awakening", image: "assets/images/card_real_world_visit.jpg" }
+  },
+
+  optionRightText: "Ignore the feeling and move on.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { repression: +2 },
+    memory: { keyword: "Silence", image: "assets/images/card_real_world_visit.jpg" }
+  }
+},
+"card_school_policy_conflict": {
+  text: "You and your classmates feel a new school rule is unfair.",
+  tags: ["school", "rules"],
+  cardImage: "assets/images/card_school_policy_conflict.jpg",
+
+  optionLeftText: "Organize a petition to question it.",
+  effectLeft: {
+    stats: { courage: +15 },
+    hiddenStats: { initiative: +4 },
+    memory: { keyword: "Change", image: "assets/images/card_school_policy_conflict.jpg" }
+  },
+
+  optionRightText: "Complain quietly but follow it anyway.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { compliance: +3 },
+    memory: { keyword: "Obedience", image: "assets/images/card_school_policy_conflict.jpg" }
+  }
+},
+
+"card_identity_crisis": {
+  text: "You no longer feel like the person you were a year ago, and it scares you.",
+  tags: ["self", "growth"],
+  cardImage: "assets/images/card_identity_crisis.jpg",
+
+  optionLeftText: "Write in a journal to explore who you are now.",
+  effectLeft: {
+    stats: { self: +10, mood: +5 },
+    hiddenStats: { introspection: +4 },
+    memory: { keyword: "Reflection", image: "assets/images/card_identity_crisis.jpg" }
+  },
+
+  optionRightText: "Try to act like your old self.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { repression: +3 },
+    memory: { keyword: "Mask", image: "assets/images/card_identity_crisis.jpg" }
+  }
+},
+"card_first_art_expression": {
+  text: "You create something (a drawing, a poem) and feel proud—but hesitant to share it.",
+  tags: ["self", "expression"],
+  cardImage: "assets/images/card_first_art_expression.jpg",
+
+  optionLeftText: "Share it online or with a friend.",
+  effectLeft: {
+    stats: { courage: +10, mood: +5 },
+    hiddenStats: { vulnerability: +4 },
+    memory: { keyword: "Expression", image: "assets/images/card_first_art_expression.jpg" }
+  },
+
+  optionRightText: "Delete it and pretend it never existed.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { avoidance: +4 },
+    memory: { keyword: "Hide", image: "assets/images/card_first_art_expression.jpg" }
+  }
+},
+"card_fear_of_future": {
+  text: "People start asking what you want to do in the future. You feel lost.",
+  tags: ["self", "pressure"],
+  cardImage: "assets/images/card_fear_of_future.jpg",
+
+  optionLeftText: "Admit you're unsure and stay curious.",
+  effectLeft: {
+    stats: { mood: +5 },
+    hiddenStats: { openness: +3 },
+    memory: { keyword: "Curiosity", image: "assets/images/card_fear_of_future.jpg" }
+  },
+
+  optionRightText: "Make up an answer to avoid judgment.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { suppression: +3 },
+    memory: { keyword: "Pretend", image: "assets/images/card_fear_of_future.jpg" }
+  }
+},
+"card_self_criticism": {
+  text: "You compare yourself harshly to others and feel like you're not enough.",
+  tags: ["self", "emotion"],
+  cardImage: "assets/images/card_self_criticism.jpg",
+
+  optionLeftText: "Talk to someone about how you feel.",
+  effectLeft: {
+    stats: { mood: +10 },
+    hiddenStats: { emotionalIntimacy: +3 },
+    memory: { keyword: "Share", image: "assets/images/card_self_criticism.jpg" }
+  },
+
+  optionRightText: "Keep criticizing yourself in silence.",
+  effectRight: {
+    stats: { mood: -15 },
+    hiddenStats: { selfCriticism: +4 },
+    memory: { keyword: "Doubt", image: "assets/images/card_self_criticism.jpg" }
+  }
+},
+"card_solo_walk": {
+  text: "You take a long walk alone and feel strangely calm.",
+  tags: ["self", "solitude"],
+  cardImage: "assets/images/card_solo_walk.jpg",
+
+  optionLeftText: "Embrace solitude as a way to recharge.",
+  effectLeft: {
+    stats: { mood: +10 },
+    hiddenStats: { selfAwareness: +4 },
+    memory: { keyword: "Stillness", image: "assets/images/card_solo_walk.jpg" }
+  },
+
+  optionRightText: "Feel lonely and disconnected.",
+  effectRight: {
+    stats: { mood: -5 },
+    hiddenStats: { isolation: +3 },
+    memory: { keyword: "Loneliness", image: "assets/images/card_solo_walk.jpg" }
+  }
+}
+
+
 };

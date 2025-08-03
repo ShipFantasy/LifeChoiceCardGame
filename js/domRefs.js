@@ -1,0 +1,30 @@
+// 集中管理所有 getElementById 的 DOM 引用
+
+export const startScreen = document.getElementById('start-screen');
+export const startButton = document.getElementById('start-button');
+export const gameContainer = document.querySelector('.game-container');
+export const healthStat = document.querySelector('#health-stat span');
+export const academicsStat = document.querySelector('#academics-stat span');
+export const moodStat = document.querySelector('#mood-stat span');
+export const moneyStat = document.querySelector('#money-stat span');
+export const socialStat = document.querySelector('#social-stat span');
+export const ageDisplay = document.getElementById('age-display');
+export const cardElement = document.getElementById('card');
+export const cardText = document.getElementById('card-text');
+export const cardImage = document.getElementById('card-image');
+export const optionLeftLabel = cardElement.querySelector('.option-left-label');
+export const optionRightLabel = cardElement.querySelector('.option-right-label');
+export const optionUpLabel = cardElement.querySelector('.option-up-label');
+export const optionDownLabel = cardElement.querySelector('.option-down-label');
+export const optionCenterLabel = cardElement.querySelector('.option-center-label');
+export const packSelectionScreen = document.getElementById('pack-selection-screen');
+export const gameOverScreen = document.getElementById('game-over-screen');
+export const gameOverMessage = document.getElementById('game-over-message');
+export const cardReviewContainer = document.getElementById('card-review-container');
+export const restartButton = document.getElementById('restart-button');
+export const bottomHandStackContainer = document.getElementById('bottom-hand-stack');
+export const volumeButton = document.getElementById('volume-button');
+export const volumeScreen = document.getElementById('volume-settings-screen');
+export const backToStartButton = document.getElementById('back-to-start');
+export const bgmSlider = document.getElementById('bgm-volume');
+export const sfxSlider = document.getElementById('sfx-volume');
