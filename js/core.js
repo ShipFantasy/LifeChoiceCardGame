@@ -1,7 +1,7 @@
 import {
     playerStats, hiddenStats, deck, playedCardsHistory, bottomHandStack, state,
     engravedMemories, memoryFragments, currentCardPool,
-    CARDS_PER_YEAR
+    CARDS_PER_YEAR, yearlyGoal
 } from './gameState.js';
 
 import {
@@ -12,12 +12,15 @@ import {
 } from './domRefs.js';
 
 import { allCards_12, allCards_13, allCards_14 } from './cards.js';
+import { playClickSound, switchToMemoryMusic, switchToMainMusic } from './audio.js';
 
 window.deck = deck;
 window.state = state;
 
 
 export function startGame() {
+    // 确保游戏开始时使用主背景音乐
+    switchToMainMusic();
     initGame();
 }
 
@@ -33,12 +36,19 @@ function initGame() {
     engravedMemories.length = 0;
     bottomHandStackContainer.innerHTML = '';
 
+    // 确保卡牌在初始状态，清除任何选项显示
+    resetCardPosition();
+    
     updateStatsDisplay();
     assembleDeckForYear();
+    setYearlyGoal();
+
     drawAndDisplayNextCard();
+    updateYearlyGoalBar();
+
 }
 
-function updateStatsDisplay() {
+export function updateStatsDisplay() {
     healthStat.textContent = playerStats.health;
     academicsStat.textContent = playerStats.academics;
     moodStat.textContent = playerStats.mood;
@@ -48,7 +58,7 @@ function updateStatsDisplay() {
 }
 
 
-function assembleDeckForYear(theme) {
+export function assembleDeckForYear(theme) {
     // 不能直接赋值 currentCardPool（它是 const）
     Object.keys(currentCardPool).forEach(key => delete currentCardPool[key]);
 
@@ -68,18 +78,45 @@ function shuffleDeck(array) {
     }
 }
 
-function drawAndDisplayNextCard() {
+export function drawAndDisplayNextCard() {
 
     state.currentCardId = deck[state.cardsPlayedThisYear];
 
-    if (state.currentCardId) {
+    if (state.currentCardId && currentCardPool[state.currentCardId]) {
         displayCard(currentCardPool[state.currentCardId]);
     } else {
         console.error(`错误：第 ${state.cardsPlayedThisYear + 1} 张牌无效。`);
+        console.log('当前状态:', {
+            currentCardId: state.currentCardId,
+            currentYear: state.currentYear,
+            cardsPlayedThisYear: state.cardsPlayedThisYear,
+            deckLength: deck.length,
+            cardPoolSize: Object.keys(currentCardPool).length
+        });
+        
+        // 如果当前卡牌无效，尝试重新组装卡组
+        if (Object.keys(currentCardPool).length === 0) {
+            console.log('卡牌池为空，重新组装...');
+            assembleDeckForYear();
+            if (deck[state.cardsPlayedThisYear] && currentCardPool[deck[state.cardsPlayedThisYear]]) {
+                state.currentCardId = deck[state.cardsPlayedThisYear];
+                displayCard(currentCardPool[state.currentCardId]);
+            }
+        }
     }
 }
 
 function displayCard(cardData) {
+    if (!cardData) {
+        console.error('displayCard: cardData is undefined');
+        cardText.textContent = '卡牌数据加载中...';
+        cardImage.style.display = 'none';
+        return;
+    }
+    
+    // 确保卡牌重置到初始状态，清除选项显示
+    resetCardPosition();
+    
     if (cardData.cardImage) {
         cardImage.src = cardData.cardImage;
         cardImage.style.display = 'block';
@@ -241,15 +278,50 @@ function addCardToBottomHandStack(cardId) {
 
 
 export function resetCardPosition() {
-    cardElement.style.transition = 'transform 0.2s ease-out';
-    cardElement.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+    // 使用更流畅的回弹动画
+    cardElement.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    cardElement.style.transform = 'translate3d(0, 0, 0) rotate(0deg)';
+    cardElement.style.willChange = 'auto'; // 清除性能优化提示
+    
+    // 清除所有选项显示状态
+    cardElement.classList.remove('show-left', 'show-right', 'show-up', 'show-down');
+    
+    // 动画结束后清除 transition
+    setTimeout(() => {
+        if (cardElement.style.transition.includes('cubic-bezier')) {
+            cardElement.style.transition = '';
+        }
+    }, 300);
+}
+
+export function rebuildHandStack() {
+    // 清空底部手牌栈
+    bottomHandStack.length = 0;
+    bottomHandStackContainer.innerHTML = '';
+    
+    // 重建当前年度的手牌栈
+    const currentYearCards = playedCardsHistory.slice(-state.cardsPlayedThisYear);
+    currentYearCards.forEach(cardId => {
+        addCardToBottomHandStack(cardId);
+    });
 }
 
 function enterEngravingSelection() {
+    switchToMemoryMusic();
+
+    // 🎯 检查本年度目标是否达成，并生成banner内容
+    const achieved = checkYearlyGoal();
+    let goalMsg = '';
+    if (yearlyGoal.stat) {
+        goalMsg = achieved
+            ? `<div class="goal-achieved-banner">🎉 Annual goal achieved! +10 ${capitalize(yearlyGoal.stat)}</div>`
+            : `<div class="goal-failed-banner">Annual goal not achieved...</div>`;
+    }
+
+    // 1. 渲染9张铭刻卡片
     const container = document.getElementById("card-review-container");
     container.innerHTML = ""; // 清空
 
-    // 展示底部 9 张卡牌
     const last9 = playedCardsHistory.slice(-CARDS_PER_YEAR);
     last9.forEach(cardId => {
         const cardData = currentCardPool[cardId] || allCards_12[cardId] || allCards_13[cardId] || allCards_14[cardId];
@@ -257,15 +329,15 @@ function enterEngravingSelection() {
 
         const cardEl = document.createElement("div");
         cardEl.className = "engrave-choice-card";
-        // 根据玩家选择的记忆片段找关键词
         const fragment = memoryFragments.find(f => f.image === cardData.cardImage);
         const keywordDisplay = fragment?.keyword || '？';
 
         cardEl.innerHTML = `
-        <img src="${cardData.cardImage}" alt="${keywordDisplay}">
-        <div class="card-keyword-label">${keywordDisplay}</div>
+            <div class="engrave-card-img-wrap">
+                <img src="${cardData.cardImage}" alt="${keywordDisplay}">
+            </div>
+            <div class="engrave-card-label">${keywordDisplay}</div>
         `;
-
 
         // 添加随机旋转 & 偏移
         const rotate = (Math.random() * 10 - 5).toFixed(2) + 'deg';
@@ -276,9 +348,8 @@ function enterEngravingSelection() {
         cardEl.style.setProperty('--x', tx);
         cardEl.style.setProperty('--y', ty);
 
-
-
         cardEl.onclick = () => {
+            playClickSound();
             engravedMemories.push({
                 keyword: fragment?.keyword || cardData.keyword || '？',
                 image: cardData.cardImage,
@@ -286,19 +357,30 @@ function enterEngravingSelection() {
             });
 
             document.getElementById("birthday-popup").style.display = "none";
-            proceedToNextYear(); // 进入下一年
+            proceedToNextYear();
         };
 
         container.appendChild(cardEl);
     });
 
+    // 2. 在铭刻卡片下方插入banner
+    const banner = document.querySelector('#birthday-popup .goal-banner-container');
+    banner.innerHTML = goalMsg;
+
     document.getElementById("birthday-popup").style.display = "flex";
+}
+
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function proceedToNextYear() {
     state.currentYear++;
     // ✅ 年龄超过14，触发结局
     if (state.currentYear > 14) {
+        // 进入结局，保持记忆音乐
+        console.log('🎮 进入游戏结局，保持记忆音乐');
 
         const ending = determineEnding();  // ✅ 动态获取结局
 
@@ -346,17 +428,57 @@ function proceedToNextYear() {
     }
 
 
-    state.cardsPlayedThisYear = 0;
-    deck.length = 0;
-    bottomHandStack.length = 0;
-    bottomHandStackContainer.innerHTML = "";
-    assembleDeckForYear();
-    updateStatsDisplay();
-    
-    applyEngravedBonus();
-    if (typeof showHiddenStats === 'function') showHiddenStats();
-    drawAndDisplayNextCard();
+    // 进入下一年，切换回主背景音乐
+      switchToMainMusic();
+      state.cardsPlayedThisYear = 0;
+      deck.length = 0;
+      bottomHandStack.length = 0;
+      bottomHandStackContainer.innerHTML = "";
 
+      assembleDeckForYear();
+      updateStatsDisplay();
+      applyEngravedBonus();
+      if (typeof showHiddenStats === 'function') showHiddenStats();
+
+      // 这里！年初就重新生成目标
+      setYearlyGoal();
+      updateYearlyGoalBar();
+
+      // 然后才开始新一年出牌
+      drawAndDisplayNextCard();
+
+}
+
+function setYearlyGoal() {
+    // 可选属性池
+    const candidates = ['health', 'academics', 'mood', 'money', 'social'];
+    const stat = candidates[Math.floor(Math.random() * candidates.length)];
+    // 随机目标值，范围可微调
+    let value = 70 + Math.floor(Math.random() * 11); // 70~80
+
+    yearlyGoal.stat = stat;
+    yearlyGoal.value = value;
+    yearlyGoal.achieved = false;
+}
+
+function checkYearlyGoal() {
+    if (!yearlyGoal.stat) return null;
+    yearlyGoal.achieved = playerStats[yearlyGoal.stat] >= yearlyGoal.value;
+    return yearlyGoal.achieved;
+}
+
+export function updateYearlyGoalBar() {
+    const bar = document.getElementById('yearly-goal-bar');
+    if (!bar) return;
+    if (!yearlyGoal.stat) {
+        bar.innerHTML = '';
+        return;
+    }
+    let txt = `🎯 This year's goal: <b>${capitalize(yearlyGoal.stat)}</b> ≥ <b>${yearlyGoal.value}</b>`;
+    bar.innerHTML = txt;
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 }
 
 function applyEngravedBonus() {

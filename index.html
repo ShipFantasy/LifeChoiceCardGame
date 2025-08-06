@@ -14,24 +14,39 @@
         <h1>Life Pages</h1>
         <p>You are about to embark on a youth journey from the age of 12 to 15.<br>Every choice you make will shape your future.</p>
         <button id="start-button">Start game</button>
+        <button id="load-button">Load game</button>
         <button id="volume-button">Settings</button>
     </div>
 
     <div id="volume-settings-screen" class="overlay-screen hidden">
-        <h2>Volumn</h2>
+        <h2>Volume</h2>
         <div class="volume-control">
             <label for="bgm-volume">BACKGROUND</label>
             <input type="range" id="bgm-volume" min="0" max="1" step="0.01" value="0.5">
+            <span class="volume-indicator" id="bgm-indicator">50%</span>
         </div>
         <div class="volume-control">
             <label for="sfx-volume">SFX</label>
             <input type="range" id="sfx-volume" min="0" max="1" step="0.01" value="0.5">
+            <span class="volume-indicator" id="sfx-indicator">50%</span>
         </div>
         <button id="back-to-start">RETURN</button>
     </div>
 
+    <!-- Save/Load Screen -->
+    <div id="save-load-screen" class="overlay-screen hidden">
+        <h2 id="save-load-title">Save Game</h2>
+        <div id="save-slots">
+            <!-- Save slots will be generated here -->
+        </div>
+        <div class="save-controls">
+            <button id="back-from-save">Back</button>
+        </div>
+    </div>
+
 
     <div class="game-container hidden">
+        <div id="yearly-goal-bar" style="margin: 8px 0; text-align: center;"></div>
         <div class="stats-container">
             <div class="stat" id="health-stat"><i class="fas fa-heart"></i> <span>100</span></div>
             <div class="stat" id="academics-stat"><i class="fas fa-book"></i> <span>60</span></div>
@@ -64,6 +79,7 @@
 
         <div id="bottom-hand-stack" class="bottom-hand-stack"></div>
 
+        <button id="save-button" class="corner-save-button">Save</button>
         <button id="quit-button" class="corner-exit-button">Quit</button>
 
 
@@ -71,6 +87,7 @@
         <h2>Welcome to the next year,</h2>
         <p>choose something to remember</p>
         <div id="card-review-container"></div>
+        <div class="goal-banner-container"></div>
         </div>
 
 

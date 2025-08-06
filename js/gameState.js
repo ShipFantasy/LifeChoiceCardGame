@@ -41,3 +41,10 @@ export function resetGameState() {
     memoryFragments = [];
     engravedMemories = [];
 }
+
+export let yearlyGoal = {
+    stat: null,
+    value: null,
+    achieved: false
+};
+
